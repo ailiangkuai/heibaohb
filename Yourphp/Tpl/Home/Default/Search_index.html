@@ -1,0 +1,114 @@
+
+<style type="text/css">
+.on{ color:#f00;}
+</style>
+<div class="left">
+		<div class="pos"><b></b><span>{:L(catpos)}<a href="{:URL()}">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt " /> {:L(SEARCH_RESULTS)}</span></div>
+<?php 
+function getattrlink($fieldid,$currentval,$idname)
+{
+        	$model = M ( 'Field' );
+            $vo = $model->getById($fieldid);//获取类别字段id
+            if($vo['setup']) $vo['setup']=string2array($vo['setup']);
+            $options = explode("\n",$vo['setup']['options']);
+            foreach($options as $r) {
+        		$v = explode("|",$r);
+        		$k = trim($v[1]);
+        		$nametypearr[$k] = $v[0];
+        	}
+           foreach($nametypearr as $key=>$val)
+           {
+                $class=" class='' ";
+           		if($currentval==$key)
+                {
+                	$class=" class='on' ";
+                }
+                echo "<a href=\"javascript:load$idname('".$key."');\" $class>$val</a>";
+           }
+}
+?>
+<form  id="shaixuanform" method="GET" action="index.php?">
+ 	<input type="hidden" id=""  name="m" value="Search"/>{//设置模型}
+    <input type="hidden" id="" name="module" value="Product" />
+    <input type="hidden" id="catid" name="catid" value="{$catid}" />{//设置默认栏目id}
+    <input type="hidden" id="nametype" name="nametype" value="{$nametype}" />{//设置名称}
+    <input type="hidden" id="kuanshi" name="kuanshi" value="{$kuanshi}" />{//设置款式}
+    <input type="hidden" id="price" name="price" value="{$price}" />{//设置价格区间}
+    {if  APP_LANG}<input type="hidden" name="l" value="{:LANG_NAME}" />{/if}{//设置语言版本}
+    <input type="text" name="keyword" id="" class="input-text" value="{$keyword}" />{//设置关键词}
+    
+    
+    <div class="shaixuanline">
+        <span>类别：</span>
+        <a {if !$catid} class="on" {/if} href="javascript:loadleibie('0');">全部</a>
+        <yp:subcat catid="4">
+        <a {if ($catid==$r['id'])} class="on"{/if} href="javascript:loadleibie('{$r['id']}');">{$r['catname']}</a>
+        </yp:subcat>
+    </div>
+    <div class="shaixuan">
+    	名称：
+        <a {if !$nametype} class="on" {/if} href="javascript:loadnametype('');">全部</a>
+    	<?php getattrlink(117,$nametype,"nametype");?>
+    </div>
+    <div class="shaixuan">
+    	款式：
+         <a {if !$kuanshi} class="on" {/if} href="javascript:loadkuanshi('');">全部</a>
+         <?php getattrlink(118,$kuanshi,"kuanshi");?>
+    </div>
+    <div class="shaixuan">
+    	价格：
+    	<a {if !$price} class="on" {/if} href="javascript:loadprice('');">全部</a>
+        <a {if $price==1} class="on" {/if} href="javascript:loadprice('1');">0-100元</a>
+        <a {if $price==2} class="on" {/if} href="javascript:loadprice('2');">1-200元</a>
+        <a {if $price==3} class="on" {/if} href="javascript:loadprice('3');">2-300元</a>
+        <a {if $price==4} class="on" {/if} href="javascript:loadprice('4');">3-400元</a>
+        <a {if $price==5} class="on" {/if} href="javascript:loadprice('5');">4-500元</a>
+        <a {if $price==6} class="on" {/if} href="javascript:loadprice('6');">5-600元</a>
+
+    </div>
+		<script>
+            function loadleibie(leibie ){
+				jQuery("#catid").attr("value",leibie);
+				jQuery("#shaixuanform").submit();
+			}
+			
+			function loadnametype(nametype ){
+				jQuery("#nametype").attr("value",nametype);
+				jQuery("#shaixuanform").submit();
+			}
+			
+			function loadkuanshi(kuanshi ){
+				jQuery("#kuanshi").attr("value",kuanshi);
+				jQuery("#shaixuanform").submit();
+			}
+			
+			
+			
+			function loadprice(price){
+				jQuery("#price").attr("value",price);
+				jQuery("#shaixuanform").submit();
+			}
+        </script>
+</form>
+
+
+		<div style="margin:12px;background:#EFEFEF;padding:10px;">
+		
+		</div>
+
+		<div class="list">
+		<ul class="txt">
+			<volist name="list" id="r">
+					<li><span class="date">[{$r.createtime|toDate=###,'Y-m-d'}]</span><a href="{$r.url}" target="_blank">{$r.title}</a></li>
+			</volist> 
+		</ul></div>
+
+		<div id="pages" class="page">{$pages}</div>
+		<br>
+</div>
+
+
+
+
+
+

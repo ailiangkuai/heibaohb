@@ -1,0 +1,29 @@
+<div class="a" style="font-size:14px;padding-bottom: 10px;overflow: hidden;">
+    <script language=javascript>
+        var focus_width = {$flashwidth};
+        /*幻灯片新闻图片宽度*/
+        var focus_height = {$flashheight};
+        /*幻灯片新闻图片高度*/
+        var text_height = 16;
+        /*幻灯片新闻文字标题高度*/
+        var swf_height = focus_height + text_height
+        var pics = '';
+        var links = '';
+        var texts = '';
+        function ati(url, img, title) {
+            if (pics != '') {
+                pics = pics + "|";
+                links = links + "|";
+                texts = texts + "|";
+            }
+            pics = pics + escape(img);
+            links = links + escape(url);
+            texts = texts + encodeURIComponent(title);
+        }
+        {loop}
+        ati('{$r.link}', '{$r['pic']}', '{$r['title']}');
+        {/loop}
+
+        document.write('<embed src="__PUBLIC__/Js/flash1/pixviewer.swf" wmode="opaque" FlashVars="pics=' + pics + '&links=' + links + '&texts=' + texts + '&borderwidth=' + focus_width + '&borderheight=' + focus_height + '&textheight=' + text_height + '" menu="false" bgcolor="#ffffff" quality="high" width="' + focus_width + '" height="' + swf_height + '" allowScriptAccess="sameDomain" type="application/x-shockwave-flash">');
+    </script>
+</div>

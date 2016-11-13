@@ -1,0 +1,101 @@
+select,input,textarea {font-size:12px}
+td,div,center {  font-size: 12px; line-height:16px;}
+div,img { margin:0; padding:0; border:0px; }
+
+body
+{
+    font-size: 12px;
+    SCROLLBAR-FACE-COLOR: #cccccc;
+    SCROLLBAR-HIGHLIGHT-COLOR: #F5F9FF;
+    SCROLLBAR-SHADOW-COLOR: #777777;
+    SCROLLBAR-3DLIGHT-COLOR: #777777;
+    SCROLLBAR-ARROW-COLOR: #555555;
+    SCROLLBAR-TRACK-COLOR: #EFEFEF;
+    SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+}
+
+a           { font-size: 12px; color:#000000; text-decoration: none;}
+a:hover     { font-size: 12px; color:#0061C6; TEXT-DECORATION: none; }
+
+
+#fwcode { width:200px; height:20px; color:#000000; font-family:Arial, Helvetica, sans-serif; border-top:1px solid #808080; border-left:1px solid #808080; border-bottom:1px solid #D4D0C8; border-right:1px solid #D4D0C8; }
+#fwBtn {  }
+
+.font01  {font-size:12px;color:#666666;}
+.font02  {font-size:12px;color:#333333;}
+.font03  {font-size:14px;font-weight:bold; color:#666666;}
+.font04  {font-size:13px;font-weight:bold; color:#ff0000;}
+.font05  {font-size:12px;color:#333333;}
+.font06  {font-size:12px;color:#333333; line-height:21px;}
+.font08  {font-size:12px;color:#4B4B4B;}
+.in_font94 { border:1px solid #dddddd; line-height:23px; padding-left:13px; padding-right:15px; font-family:"微软雅黑"; background-image:url(../Image/dot_1006.jpg);}
+.tab5 { border:1px solid #bbbbbb;  background-color:#FFFFFF; height:23px; padding-top:4px;}
+
+.img01  { width:205px; height:24px; margin-top:4px; padding-top:5px; padding-left:5px; background:url(../Image/in_1037.jpg)}
+.img02  { width:205px; height:24px; margin-top:2px; padding-top:5px; padding-left:5px; background:url(../Image/in_1037.jpg)}
+/* index CSS */
+
+a.top1      { font-size: 12px; color:#333333; text-decoration: none;}
+a:hover.top1{ font-size: 12px; color:#FF0000; text-decoration: underline;position: relative; left:1px;top:1px;}
+
+a.top2      { font-size: 12px; line-height:14px; color:#666666; text-decoration: none;}
+a:hover.top2{ font-size: 12px; line-height:14px; color:#FF0000; text-decoration: none;position: relative; left:1px;top:1px;}
+
+a.top3      { font-size: 12px; color:#666666; text-decoration: none;}
+a:hover.top3{ font-size: 12px; color:#FF0000; text-decoration: underline; position: relative; left:1px;top:1px;}
+
+a.top4      { font-size: 14px; font-weight:bold; color:#666666; text-decoration: none;}
+a:hover.top4{ font-size: 14px; font-weight:bold; color:#FF0000; text-decoration:underline; position: relative; left:1px;top:1px;}
+
+a.top5      { font-size: 12px; color:#FF0000; text-decoration: none;}
+a:hover.top5{ font-size: 12px; color:#FF6600; text-decoration: underline;}
+
+a.top6      { font-size: 12px; color:#666666; text-decoration: none;}
+a:hover.top6{ font-size: 12px; color:#FF0000; text-decoration: none; position: relative; left:1px;top:1px;}
+
+a.top7      { font-size: 14px; color:#666666; text-decoration: none;}
+a:hover.top7{ font-size: 14px; color:#FF0000; text-decoration: underline; position: relative; left:1px;top:1px;}
+
+a.top8      { font-size: 12px; color:#464646; text-decoration: none;}
+a:hover.top8{ font-size: 12px; color:#FF0000; text-decoration: underline; position: relative; left:1px;top:1px;}
+
+/* index CSS */
+/************************************************************************************************/
+.GDNetMenuDownMenu { LEFT: -1000px; TOP: -1000px; overflow:hidden; POSITION: absolute;}
+.GDNetMenuDownMenu .content { POSITION: absolute; overflow-x:hidden; overflow-y:auto; height:280px;}
+.GDNetMenuDownMenu .items {  LEFT: 0px;  TOP: 0px ; BORDER: #ffffff 0px solid;  Z-INDEX: 2;POSITION: relative; background-image:url(../Image/in_1035.gif);}
+.top .items { BORDER-TOP: medium none; }
+.GDNetMenuDownMenu .item { BORDER: medium none; CURSOR: hand; COLOR: #ffffff; TEXT-DECORATION: none}
+.GDNetMenuDownMenu .background   { Z-INDEX: 1; FILTER: alpha(opacity=90); LEFT: 0px; POSITION: absolute; TOP:    0px; moz-opacity: .9;}
+.GDNetMenuDownMenu .shadowRight  { Z-INDEX: 3; FILTER: alpha(opacity=40); WIDTH:2px; POSITION: absolute; TOP:    3px; moz-opacity: .4;}
+.GDNetMenuDownMenu .shadowBottom { Z-INDEX: 1; FILTER: alpha(opacity=40); LEFT: 3px; POSITION: absolute; HEIGHT: 2px; moz-opacity: .4;}
+.GDNetMenuDownMenu .hover {	BACKGROUND: #FFD7D7; COLOR: #ff0000}
+.GDNetMenuDownMenu .item IMG {	MARGIN-LEFT: 10px}
+/************************************************************************************************/
+
+.tbBody{overflow:hidden; text-overflow:ellipsis;}
+
+/*----- KF CSS start ---------*/
+
+.izl-rmenu{position:fixed; right:0; margin-right:20px; bottom:150px; padding-bottom:20px; background:url(../Image/KF_b.png) 0px bottom no-repeat; z-index:9999; }
+.izl-rmenu .btn{width:72px; height:73px; margin-bottom:1px; cursor:pointer; position:relative;}
+.izl-rmenu .lfont01 { font-family:'微软雅黑'; font-size:16px; color:#FFFFFF; line-height:19px; }
+.izl-rmenu .lfont02 { font-family:'微软雅黑'; font-size:12px; color:#666666; line-height:19px; }
+.izl-rmenu .lfont03 { font-family:'微软雅黑'; font-size:12px; font-weight:bold; color:#FFFFFF; line-height:19px; }
+
+.izl-rmenu .btn-wx{background:url(../Image/KF_wx.png) 0px 0px no-repeat; background-color:#4B8F18;}
+.izl-rmenu .btn-wx:hover{background-color:#58a81c;}
+.izl-rmenu .btn-wx .pic{position:absolute; left:-170px; top:0px; display:none;width:160px;height:180px; border:5px solid #58a81c;}
+
+.izl-rmenu .btn-qq{background:url(../Image/KF_qq.png) 0px 0px no-repeat; background-color:#F86D23;}
+.izl-rmenu .btn-qq:hover{background-color:#FF7B0F;}
+.izl-rmenu .btn-qq .qq{position:absolute; left:-170px; top:0px; display:none;width:160px;height:180px; border:5px solid #FF7B0F;}
+
+.izl-rmenu .btn-top{background:url(../Image/KF_top.png) 0px 0px no-repeat; background-color:#666666; display:none;}
+.izl-rmenu .btn-top:hover{background-color:#444;}
+
+
+#inphoto_popup {filter: Alpha(Opacity=60, Style=0);opacity: 0.60;background: #333333;position: absolute;z-index: 30;left:0px;top: -28px;}
+#inphoto_text {position: absolute;z-index: 40;left:0px;top: -28px;}
+.bigon  { COLOR: #ffffff; width:21px; height:15px; font-size:11px; line-height:15px; font-family:Arial, Helvetica, sans-serif; background-image:url(../Image/bg_1016.gif);}
+.bigoff { COLOR: #ffffff; width:21px; height:15px; font-size:11px; line-height:15px; font-family:Arial, Helvetica, sans-serif; background-image:url(../Image/bg_1015.gif);}

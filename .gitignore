@@ -1,0 +1,15 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# webcms:
+/Cache/Cache/*
+/Cache/Logs/*
+/Cache/Data/*
+/Uploads/*
+
+#phpstorm 
+.idea
+
+

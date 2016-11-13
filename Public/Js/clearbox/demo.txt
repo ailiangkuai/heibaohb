@@ -1,0 +1,6 @@
+
+<link rel="stylesheet" href="/Public/Js/clearbox/clearbox.css"/>
+<script type="text/javascript" src="/Public/Js/clearbox/clearbox.js"></script>
+<script type="text/javascript">
+    var CB_PicDir = '__PUBLIC__/Js/clearbox/pic';
+</script>
