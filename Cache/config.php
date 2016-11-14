@@ -8,9 +8,9 @@
  return array(
 	'DB_TYPE'=>'mysql',
 	'DB_HOST'=>'localhost',
-	'DB_NAME'=>'hbheibao',
-	'DB_USER'=>'root',
-	'DB_PWD'=>'root',
+	'DB_NAME'=>'heibaohb',
+	'DB_USER'=>'heibaohb',
+	'DB_PWD'=>'Td@z,b?p=b_f',
 	'DB_PORT'=>'3306',
 	'DB_PREFIX'=>'cms_',
 );
