@@ -517,7 +517,7 @@ Accelimation.timerID = null;
 
 var preloaded = [];
 
-for (var i = 1; i <= 5; i++) {	preloaded[i] = [loadImage(i + "-0.gif"), loadImage(i + "-1.gif")];}
+/*for (var i = 1; i <= 5; i++) {	preloaded[i] = [loadImage(i + "-0.gif"), loadImage(i + "-1.gif")];}*/
 
 function init() {if (GDNetMenuDown.isSupported()) { GDNetMenuDown.initialize();  }}
 

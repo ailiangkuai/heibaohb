@@ -1,5 +1,5 @@
 <include file="Block:nav"/>
-	<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="120" background="/Public/Image/in_2021.png">
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="120" background="/Public/Image/in_2021.png">
 		<TR>
 			<TD align="center">
 				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='950' height='120' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' id=ShockwaveFlash1>
@@ -44,13 +44,49 @@
 				</TR><TR><TD height="1" bgcolor="#D8D8D8" colspan="2"></TD></TR>
 			</table>
 
-			<table align="center" cellpadding="0" cellspacing="0" border="0" width="715">
-				<TR><TD height="35"></TD></TR>
-				<TR><TD style="font-size:14px; color:#333333; line-height:26px;">
-					{$content}
+			<table align="center" cellpadding="0" cellspacing="0" border="0" width="720">
+				<tbody>
+				<tr>
+					<td height="38" width="240"></td>
+					<td width="240"></td>
+					<td width="240"></td>
+				</tr>
+				<?php $list = array_chunk($list,3); ?>
+				<?php foreach($list as $row): ?>
+				<tr align="center" valign="top">
+					<?php foreach($row as $r): ?>
+					<td>
+						<a href="{$r.url}" class="top6" target="_blank"><img
+								src="{$r.thumb}" width="205" height="130" border="0">
+							<div align="left" class="img01">{$r.title}</div>
+						</a>
+					</td>
+					<?php endforeach; ?>
+				</tr>
+				<tr>
+					<td height="25"></td>
+				</tr>
+				<?php endforeach; ?>
 
-				</TD></TR>
-				<TR><TD height="50"></TD></TR>
+
+				</tbody>
+			</table>
+
+
+			<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td height="33" align="center"  style="color:#888888" class="pages">
+						{$pages}
+					</td>
+				</tr>
+				<tr>
+					<td height="30"></td>
+				</tr>
+				</tbody>
 			</table>
 
 

@@ -7,7 +7,7 @@ Desktop.ini
 /Cache/Cache/*
 /Cache/Logs/*
 /Cache/Data/*
-/Uploads/*
+
 
 #phpstorm 
 .idea

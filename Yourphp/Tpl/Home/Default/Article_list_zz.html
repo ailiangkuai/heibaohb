@@ -1,4 +1,8 @@
 <include file="Block:nav"/>
+<link href="/Public/Image/Box_lightbox.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/Public/Image/Box_prototype.js"></script>
+<script type="text/javascript" src="/Public/Image/Box_scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="/Public/Image/Box_lightbox.js"></script>
 <table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="120" background="/Public/Image/in_2021.png">
 	<TR>
 		<TD align="center">
@@ -44,96 +48,28 @@
 			</TR><TR><TD height="1" bgcolor="#D8D8D8" colspan="2"></TD></TR>
 		</table>
 
-		<table align="center" cellpadding="0" cellspacing="0" border="0" width="720">
+		<table align="center" cellpadding="0" cellspacing="0" border="0" width="715">
 			<tbody>
-			<tr>
-				<td height="25"></td>
-			</tr>
-			<tr>
-				<td align="center"><font style="font-size:20px;font-family:黑体; color:#C60000; line-height:30px;">{$title}</font>
-				</td>
-			</tr>
-			<tr>
-				<td height="8"></td>
-			</tr>
+			<?php $list = array_chunk($list,3); ?>
+			<?php foreach($list as $row): ?>
+				<tr><td height="30"></td></tr>
+				<tr align="center">
+					<?php foreach($row as $r): ?>
+					<td height="30" class="font04">{$r.title}</td>
+					<?php endforeach; ?>
+				</tr>
+				<tr align="center">
+					<?php foreach($row as $r): ?>
+					<td><a href="{$r.thumb}" class="tt_in1" rel="lightbox[01]" )=""><img src="{$r.thumb}" border="0"></a></td>
+					<?php endforeach; ?>
+				</tr>
+			<?php endforeach; ?>
+
+
+
+			<tr><td height="80"></td></tr>
 			</tbody>
 		</table>
-
-		<table align="center" cellpadding="0" cellspacing="0" border="0" width="720">
-			<tbody>
-			<tr>
-				<td background="/Public/Image/dot_1005.gif" height="4" colspan="4" bgcolor="#f4f4f4"></td>
-			</tr>
-			<tr style="color:#666666;" bgcolor="#f4f4f4">
-				<td class="font3">&nbsp; [来源:深圳新黑豹]</td>
-				<td class="font3" height="20" align="center">[发布时间:<?php echo date('Y-年-m月-d日',$createtime) ?>]</td>
-				<td class="font3" align="right">[文章点击数:{$hits}] &nbsp;</td>
-			</tr>
-			<tr>
-				<td background="/Public/Image/dot_1005.gif" height="4" colspan="4"></td>
-			</tr>
-			<tr>
-				<td height="15" colspan="4"></td>
-			</tr>
-			</tbody>
-		</table>
-
-		<table align="center" cellpadding="0" cellspacing="0" border="0" width="680">
-			<tbody>
-			<tr>
-				<td height="15"></td>
-			</tr>
-			<tr>
-				<td height="200" valign="top"
-					style="font-size:14px; line-height:23px; color:#333333; word-break : break-all">
-					{$content}
-				</td>
-			</tr>
-			<tr>
-				<td align="center" height="20"></td>
-			</tr>
-			</tbody>
-		</table>
-
-
-		<table align="center" cellpadding="0" cellspacing="0" border="0" width="720">
-			<tbody>
-			<tr>
-				<td width="10"></td>
-				<td width="710" height="15"></td>
-			</tr>
-			<tr>
-				<td height="1"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td height="6" background="/Public/Image/dot_1004.gif"></td>
-			</tr>
-			<tr>
-				<td height="10" colspan="2"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td height="20" style="color:#ff4400">&nbsp; &nbsp; <b>上一篇</b>： <yp:pre msg="没有了"  />
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td height="20" style="color:#ff4400">&nbsp; &nbsp; <b>下一篇</b>： <yp:next msg="没有了" />
-				</td>
-			</tr>
-			<tr>
-				<td height="10" colspan="2"></td>
-			</tr>
-			</tbody>
-		</table>
-
-
-
-		<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
-			<tbody><tr><td height="10"></td></tr>
-			<tr><td height="28"></td></tr>
-			</tbody></table>
 
 		<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
 			<tbody>

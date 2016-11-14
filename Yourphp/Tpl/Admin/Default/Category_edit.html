@@ -52,7 +52,12 @@ $('#nav ul a ').eq(1).addClass('on');
 		</tr>
 
 
-	 
+			<tr>
+				<td>头部flash</td>
+				<td><?php $iconInfo = 	array ( 'id' => '116', 'moduleid' => '10', 'field' => 'flash', 'name' => '头部flash', 'tips' => '', 'required' => '0', 'minlength' => '0', 'maxlength' => '0', 'pattern' => '0', 'errormsg' => '', 'class' => '', 'type' => 'image', 'setup' => array ( 'size' => '', 'default' => '', 'upload_maxsize' => '', 'upload_allowext' => 'swf', 'watermark' => '0', 'more' => '0', ), 'ispost' => '0', 'unpostgroup' => '', 'listorder' => '0', 'status' => '1', 'issystem' => '0', );?>
+					{:Form::file($iconInfo,$vo['flash'])}
+				</td>
+			</tr>
 
 		<tr id="module_url" style="display:none;">
 		<td>{:L('cat_link_url')}</td>

@@ -1,20 +1,62 @@
-<div class="c"></div>
-<br>
 
-</div></div>
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000"
+       height="65" background="/Public/Image/in_1006.png">
+    <TR>
+        <td width="40" rowspan="4">
+        </td>
+        <TD height="10">
+        </TD>
+    </TR>
+    <TR>
+        <TD height="17" style="color:#D31414">
+            公司地址/深圳市南山区松坪山路1号 &nbsp;电话/0755-26634075 26634851 &nbsp;
+            <img src="/Public/Image/in_1031.gif" border="0" align="absmiddle">
+        </TD>
+    </TR>
+    <TR>
+        <TD height="17" style="color:#D31414">
+            <font style=" font-family:Arial, Helvetica, sans-serif">
+                &copy;
+            </font>
+            2003 深圳市新黑豹建材有限公司 HBHEIBAO.COM 版权所有 All Right Reserved. &nbsp;
+        </TD>
+    </TR>
+    <TR>
+        <TD height="21">
 
-<div id="footer" class="warp">
-<yp:block pos="footer" /> 
+        </TD>
+    </TR>
+</table>
 </div>
-{if $Module[9]['status']}
-<YP:kefu id="kefu" left="-10" top="180" />
-{/if}
- 
-</div>
-</div>
+<script language="JavaScript">
+    <!--
+    function initAd001() {
+        document.all.AdLayer001.style.posTop = -200;
+        //设置onLoad事件激发以后，广告层相对于固定后的y方向位置
+        document.all.AdLayer001.style.visibility = 'visible' //设置层为可见
+        MoveLayer('AdLayer001'); //调用函数MoveLayer()
+    }
+    function MoveLayer(layerName) {
+        var x = 20; //浮动广告层固定于浏览器的x方向位置
+        var y = 160; //浮动广告层固定于浏览器的y方向位置
+        var diff = (document.body.scrollTop + y - document.all.AdLayer001.style.posTop) * .40;
+        var y = document.body.scrollTop + y - diff;
+        eval("document.all." + layerName + ".style.posTop = y");
+        eval("document.all." + layerName + ".style.posLeft = x"); //移动广告层
+        setTimeout("MoveLayer('AdLayer001');", 20); //设置20毫秒后再调用函数MoveLayer()
+    }
 
+    //-->
+
+</script>
+<!--下面为一个ID为AdLayer001的层(如ID名不为AdLayer001， 上面MoveLayer()内的AdLayer001也要作相应修改)，包括一张带链接的图片-->
+<div id="AdLayer001" style='position:fixed; width:160px; height:240px; z-index:20; visibility:hidden;; left: 20px; top: 100px'>
+    <A href="News_show.asp?id=675" target="_blank">
+        <img src="/Public/Image/ad_1002.png" border="0" style="background-color:transparent;">
+    </A>
 </div>
+<div id="KF_right">
 </div>
-<script>showon('.catlist ul li.folder','span.fd_ico','{$catid}');</script>
 </body>
+
 </html>

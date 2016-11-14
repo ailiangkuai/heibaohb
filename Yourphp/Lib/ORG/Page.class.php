@@ -92,6 +92,7 @@ class Page extends Think {
 		}
 
 		$output = '';
+        $output .= '<span class="info">分页：'.$this->nowPage.'/'.$this->totalPages.'</span>';
 		$output .= '<a class="a1">'.$this->totalRows.L('page_item').'</a>';
 		$output .= '<a href="'.$this->pageurl($urlrule, 1,$this->parameter).'">'.L('first_page').'</a>';
 		$output .= '<a href="'.$this->pageurl($urlrule, $pre_page,$this->parameter).'">'.L('previous').'</a>';
@@ -100,26 +101,26 @@ class Page extends Think {
 		if($this->totalPages <= $show_nums){
 			for($i = 1;$i<=$this->totalPages;$i++){
 				if($i == $this->nowPage){
-					$output .= '<span>'.$i.'</span>';
+					$output .= '<span class="cur">'.$i.'</span>';
 				}else{
-					$output .= '<a href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
+					$output .= '<a class="num" href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
 				}
 			}
 		}else{
 			if($this->nowPage < (1+$this->rollPage)){
 				for($i = 1;$i<=$show_nums;$i++){
 					if($i == $this->nowPage){
-						$output .=  '<span>'.$i.'</span>';
+						$output .=  '<span class="cur">'.$i.'</span>';
 					}else{
-						$output .= '<a href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
+						$output .= '<a class="num" href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
 					}
 				}			
 			}else if($this->nowPage >= ($this->totalPages - $this->rollPage)){
 				for($i = $this->totalPages - $show_nums ; $i <= $this->totalPages ; $i++){
 					if($i == $this->nowPage){
-						$output .=  '<span>'.$i.'</span>';
+						$output .=  '<span class="cur">'.$i.'</span>';
 					}else{
-						$output .= '<a href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
+						$output .= '<a class="num" href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
 					}
 				}
 			}else{
@@ -127,9 +128,9 @@ class Page extends Think {
 				$end_page = $this->nowPage + $this->rollPage;
 				for($i = $start_page ; $i<=$end_page ; $i++){
 					if($i == $this->nowPage){
-						$output .=  '<span>'.$i.'</span>';
+						$output .=  '<span class="cur">'.$i.'</span>';
 					}else{
-						$output .= '<a href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
+						$output .= '<a class="num" href="'.$this->pageurl($urlrule,$i,$this->parameter).'">'.$i.'</a>';
 					}
 				}
 			}
@@ -137,6 +138,7 @@ class Page extends Think {
 		
 		$output .='<a href="'.$this->pageurl($urlrule,$next_page,$this->parameter).'">'.L('next')."</a>"; 
 		$output .='<a href="'.$this->pageurl($urlrule,$this->totalPages,$this->parameter).'">'.L('Last_page')."</a>";
+
 		return $output;
 	}
 

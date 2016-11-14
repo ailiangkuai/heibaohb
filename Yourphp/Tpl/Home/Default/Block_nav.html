@@ -1,0 +1,123 @@
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000"
+           background="/Public/Image/in_1004.png">
+        <TR>
+            <TD height="2">
+            </TD>
+        </TR>
+        <TR>
+            <TD height="28">
+                <table align="center" cellpadding="0" cellspacing="0" border="0" width="1000">
+                    <TR>
+                        <TD width="25">
+                        </TD>
+                        <TD width="113">
+                            <a href="{$site_url}">
+                                <img src="/Public/Image/in_1011.png" id="button0" name="button0" onMouseOver="this.src='/Public/Image/in_1021.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1011.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="97">
+                            <a href="{$Categorys[29][url]}" target='_blank' id="menu1" onFocus="if(this.blur)this.blur()">
+                                <img src="/Public/Image/in_1012.png" id="button1" name="button1" onMouseOver="this.src='/Public/Image/in_1022.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1012.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="93">
+                            <a href="{$Categorys[21][url]}" target='_blank' id="menu2" onFocus="if(this.blur)this.blur()">
+                                <img src="/Public/Image/in_1013.png" id="button2" name="button2" onMouseOver="this.src='/Public/Image/in_1023.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1013.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="93">
+                            <a href="{$Categorys[22][url]}" target='_blank' id="menu3" onFocus="if(this.blur)this.blur()">
+                                <img src="/Public/Image/in_1014.png" id="button3" name="button3" onMouseOver="this.src='/Public/Image/in_1024.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1014.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="95">
+                            <a href="{$Categorys[23][url]}" target='_blank' id="menu4" onFocus="if(this.blur)this.blur()">
+                                <img src="/Public/Image/in_1015.png" id="button4" name="button4" onMouseOver="this.src='/Public/Image/in_1025.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1015.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="96">
+                            <a href="{$Categorys[49][url]}" target='_blank' id="menu5" onFocus="if(this.blur)this.blur()">
+                                <img src="/Public/Image/in_1016.png" id="button5" name="button5" onMouseOver="this.src='/Public/Image/in_1026.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1016.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="97">
+                            <a href="{$Categorys[25][url]}" target='_blank' id="menu6" onFocus="if(this.blur)this.blur()">
+                                <img src="/Public/Image/in_1017.png" id="button6" name="button6" onMouseOver="this.src='/Public/Image/in_1027.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1017.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="97">
+                            <a href="{$Categorys[37][url]}" target='_blank' id="menu7" onFocus="if(this.blur)this.blur()">
+                                <img src="/Public/Image/in_1018.png" id="button7" name="button7" onMouseOver="this.src='/Public/Image/in_1028.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1018.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="94">
+                            <a href="{$Categorys[57][url]}" target='_blank' id="menu8" onFocus="if(this.blur)this.blur()">
+                                <img src="/Public/Image/in_1019.png" id="button8" name="button8" onMouseOver="this.src='/Public/Image/in_1029.png';"
+                                     onMouseOut="this.src='/Public/Image/in_1019.png';" border="0">
+                            </a>
+                        </TD>
+                        <TD width="100">
+                        </TD>
+                    </TR>
+                </table>
+                <script language="javascript">
+                    if (GDNetMenuDown.isSupported()) {
+                        var ms = new GDNetMenuDownSet(GDNetMenuDown.direction.down, 0, 0, GDNetMenuDown.reference.bottomLeft);
+                        var menu1 = ms.addMenu(document.getElementById("menu1"));
+                        var menu2 = ms.addMenu(document.getElementById("menu2"));
+                        var menu3 = ms.addMenu(document.getElementById("menu3"));
+                        var menu4 = ms.addMenu(document.getElementById("menu4"));
+                        var menu5 = ms.addMenu(document.getElementById("menu5"));
+                        var menu6 = ms.addMenu(document.getElementById("menu6"));
+                        var menu7 = ms.addMenu(document.getElementById("menu7"));
+                        var menu8 = ms.addMenu(document.getElementById("menu8"));
+
+                        menu7.addItem('- 招聘信息 ', '{$Categorys[37][url]}');
+                        <yp:subcat catid="20" order ="listorder asc">
+                        menu1.addItem('- {$r.catname}', '{$r.url}');
+                        </yp:subcat>
+
+
+                        <yp:subcat catid="21" order ="listorder asc">
+                        menu2.addItem('- {$r.catname}', '{$r.url}');
+                        </yp:subcat>
+
+                        <yp:subcat catid="22" order ="listorder asc">
+                        menu3.addItem('- {$r.catname}', '{$r.url}');
+                        </yp:subcat>
+
+                        <yp:subcat catid="23" order ="listorder asc">
+                        menu4.addItem('- {$r.catname}', '{$r.url}');
+                        </yp:subcat>
+
+                        <yp:subcat catid="24" order ="listorder asc">
+                        menu5.addItem('- {$r.catname}', '{$r.url}');
+                        </yp:subcat>
+
+                        <yp:subcat catid="25" order ="listorder asc">
+                        menu6.addItem('- {$r.catname}', '{$r.url}');
+                        </yp:subcat>
+
+                        <yp:subcat catid="27" order ="listorder asc">
+                        menu8.addItem('- {$r.catname}', '{$r.url}');
+                        </yp:subcat>
+
+
+                        GDNetMenuDown.renderAll();
+                    }
+                </script>
+            </TD>
+        </TR>
+        <TR>
+            <TD height="5">
+            </TD>
+        </TR>
+    </table>

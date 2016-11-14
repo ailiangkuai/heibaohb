@@ -577,12 +577,12 @@ class Form extends Think {
 			}
 			$info['setup']['upload_maxsize'] =  intval(byte_format($Config['attach_maxsize']));
 		}
-
+		$this->isadmin = $this->isadmin?:1;
 
 		$yourphp_auth_key = sysmd5(C('ADMIN_ACCESS').$_SERVER['HTTP_USER_AGENT']);
 		$yourphp_auth = authcode($this->isadmin.'-'.$info['setup']['more'].'-0-1-'.$info['setup']['upload_allowext'].'-'.$info['setup']['upload_maxsize'].'-'.$info['moduleid'], 'ENCODE',$yourphp_auth_key);
 
-		$parseStr   = ' <div id="'.$field.'_aid_box"></div><input type="text"   class="input-text '.$info['class'].'" name="'.$field.'"  id="'.$id.'" value="'.$value.'" size="'.$info['setup']['size'].'"  '.$validate.'/> <input type="button" class="button" value="'.L('upload_images').'" onclick="javascript:swfupload(\''.$field.'_uploadfile\',\''.$field.'\',\''.L('uploadfiles').'\','.$this->isadmin.','.$info['setup']['more'].',0,1,\''.$info['setup']['upload_allowext'].'\','.$info['setup']['upload_maxsize'].','.$info['moduleid'].',\''.$yourphp_auth.'\',up_image,nodo)"> ';
+		$parseStr   = ' <div id="'.$field.'_aid_box"></div><input type="text"   class="input-text '.$info['class'].'" name="'.$field.'"  id="'.$id.'" value="'.$value.'" size="'.$info['setup']['size'].'"  '.$validate.'/> <input type="button" class="button" value="'.L('upload_images').'" onclick="javascript:swfupload(\''.$field.'_uploadfile\',\''.$field.'\',\''.L('uploadfiles').'\','.$this->isadmin.','.$info['setup']['more'].',0,1,\''.$info['setup']['upload_allowext'].'\','.$info['setup']['upload_maxsize'].','.$info['moduleid'].',\''.$yourphp_auth.'\',up_image,nodo)">  '.'<a href="javascript:void(0);" onclick="showpicbox($(\'#'.$id.'\').val());"> 查看</a>';
 		return $parseStr;
 	}
 
@@ -647,6 +647,7 @@ class Form extends Think {
 			}
 			$info['setup']['upload_maxsize'] =  intval(byte_format($Config['attach_maxsize']));
 		}
+        $this->isadmin = $this->isadmin?:1;
 		$yourphp_auth_key = sysmd5(C('ADMIN_ACCESS').$_SERVER['HTTP_USER_AGENT']);
 		$yourphp_auth = authcode($this->isadmin.'-'.$info['setup']['more'].'-0-1-'.$info['setup']['upload_allowext'].'-'.$info['setup']['upload_maxsize'].'-'.$info['moduleid'], 'ENCODE',$yourphp_auth_key);
 		$parseStr   = ' <div id="'.$field.'_aid_box"></div><input type="text"    class="input-text '.$info['class'].'" name="'.$field.'"  id="'.$id.'" value="'.$value.'" size="'.$info['setup']['size'].'"  '.$validate.'/> <input type="button" class="button" value="'.L('upload_files').'" onclick="javascript:swfupload(\''.$field.'_uploadfile\',\''.$field.'\',\''.L('uploadfiles').'\','.$this->isadmin.','.$info['setup']['more'].',0,1,\''.$info['setup']['upload_allowext'].'\','.$info['setup']['upload_maxsize'].','.$info['moduleid'].',\''.$yourphp_auth.'\',up_image,nodo)"> ';
