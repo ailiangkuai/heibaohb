@@ -1,57 +1,191 @@
+<include file="Block:nav"/>
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="120" background="/Public/Image/in_2021.png">
+	<TR>
+		<TD align="center">
+			<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='950' height='120' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' id=ShockwaveFlash1>
+				<param name='movie' value='{$Categorys[$bcid][flash]}'>
+				<param name='wmode' value='transparent'>
+				<param name='quality' value='high'>
+				<param name='scale' value='Exactfit'>
+				<embed src='{$Categorys[$bcid][flash]}' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer'  width='950' height='120' type='application/x-shockwave-flash'></embed>
+			</object>
+		</TD>
+	</TR>
+</table>
+
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" background="/Public/Image/in_2022.png">
+	<TR valign="top">
+		<TD width="25" height="650"><img src="/Public/Image/in_2023.png"></TD>
+		<TD width="210" background="/Public/Image/in_2017.png">
+
+			<table align="center" cellpadding="0" cellspacing="0" border="0" width="185">
+				<TR><TD><img src="{$Categorys[$bcid][image]}" border="0"></TD></TR>
+
+				<yp:subcat catid="$bcid">
+					<TR><Td height=12></TD></TR>
+					<TR><Td height=23>&nbsp; &nbsp;<img src='/Public/Image/dot_1001.gif' align='absmiddle'> &nbsp;<a href='{$r.url}' class=top4>{$r.catname}</a></TD></TR>
+					<TR><TD><img src='/Public/Image/in_2018.png'></TD></TR>
+				</yp:subcat>
 
 
-<load href="__PUBLIC__/Js/jquery.validate.js"/>
 
-<div class="left">
-		<div class="pos"><b></b><span>{:L(catpos)}<a href="{:URL()}">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" &gt; " /></span></div>
+				<TR><TD><img src='/Public/Image/in_2020.png'></TD></TR>
+			</table>
 
-<style>
-#content {margin:0;line-height:22px;}
+		</TD><TD width="15"></TD><TD width="725">
 
-</style>
+		<table align="center" cellpadding="0" cellspacing="0" border="0" width="725">
+			<TR><TD height="10"></TD></TR>
+			<TR>
+				<TD height="23"><img src="/Public/Image/dot_1002.gif" align="absmiddle"><font class="font03">{$catname}</font></TD>
+				<TD align="right" class="font01">当前位置: 首页 >
+					<YP:catpos  catid="catid" space=" &gt; " />&nbsp;
+				</TD>
+			</TR><TR><TD height="1" bgcolor="#D8D8D8" colspan="2"></TD></TR>
+		</table>
 
 
-		<div class="guestbook_list">
-			<volist name="list" id="vo" key="k">
-			<dl>
-				<dt><span>{$vo.createtime|toDate=###,'Y-m-d H:i:s'}</span>{:L(name)}:{$vo.username} - {$vo.title}</dt>
-				<dd class="g_content">
-				{$vo.content}
-				</dd>
-				{if  $vo['reply_content']}<dt>{:L(admin_reply)}:</dt><dd class="reply_content">{$vo['reply_content']}</dd>{/if}
-			</dl>
-			</volist>
-		</div>
-		<div id="pages" class="page">{$pages}</div>
 
-		<div class="post_box">
-		<h5>{:L(submit_book)}</h5>
-		<form name="myform" id="myform" action="{:URL('User-Post/insert')}" method="post">
- 		<table cellpadding=0 cellspacing=0 class="table_form"  >
-		<input type="hidden"  name="catid" value="{$catid}" />
-		<input type="hidden"  name="moduleid" value="{$moduleid}" />
-		<input type="hidden"  name="lang" value="{$langid}" />
-		<volist name="fields" id="r">
-		<if condition="!empty($r['status']) && $r['ispost']">
+		<table align="center" cellpadding="0" cellspacing="0" border="0" width="700">
+			<tbody><tr><td height="20"></td></tr>
+			<tr><td height="36" style="border:1px solid #D7EDFF; background-color:#F1FAFF;">
+
+				<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<form name="form1" action="__ROOT__/" >
+						<input type="hidden" name="m" value="Guestbook">
+						<input type="hidden" name="a" value="index">
+						<input type="hidden" name="id" value="{$catid}">
+					<tbody><tr>
+						<td width="85" class="font03" style="color:#333333;">&nbsp;留言搜索：</td>
+						<td width="270"><input name="keyword"  value="{$keyword}" style="width:265"></td>
+						<td width="108"><input type="image" src="/Public/Image/in_4002.gif" align="absmiddle"></td>
+						<td width="100"><img src="/Public/Image/in_4003.gif" border="0" style="cursor:hand;" align="absmiddle" onclick="zOpen()"></td>
+						<td width="135" align="right" style="color:#666666"></td>
+					</tr>
+
+					</tbody>
+					</form>
+				</table>
+			</td></tr>
+			<tr><td height="10"></td></tr>
+			</tbody></table>
+
+
+		<volist name="list" id="r" key="k">
+
+			<table align="center" cellpadding="0" cellspacing="0" border="0" width="700">
+				<tbody>
+				<tr>
+					<td height="15"></td>
+				</tr>
+				<tr valign="top">
+					<td width="130">
+						<div class="in_img1"><img src="/Public/Image/in_2006.gif" width="108" height="108"></div>
+					</td>
+					<td width="570">
+						<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tbody>
+							<tr>
+								<td height="20" width="390"><font style="font-weight:bold; color:#555555;">标题:
+									{$r.title}</font></td>
+								<td align="right" width="180"><font style="color:#666666; background-color:#FFF0D7;">
+									&nbsp;时间: {$r.createtime|toDate=###,'Y-m-d H:i:s'}&nbsp;</font></td>
+							</tr>
+							<tr>
+								<td height="21" colspan="2"><font style="color:#666666">提问者: {$r.username}</font></td>
+							</tr>
+							<tr>
+								<td height="20" colspan="2" style="color:#555555;"><b>[问]</b>&nbsp;{$r.content}
+								</td>
+							</tr>
+							<tr>
+								<td height="10"></td>
+							</tr>
+							</tbody>
+						</table>
+						<table align="center" cellpadding="0" cellspacing="0" border="0" width="570" bgcolor="#FFFEF7">
+							<tbody>
+							<tr>
+								<td width="20" height="10" rowspan="3" background="/Public/Image/in_4006.gif">&nbsp;</td>
+								<td width="60" height="10" style="border-top:1px solid #FFF0D7;">&nbsp;</td>
+								<td width="40" style="border-top:1px solid #FFF0D7;">&nbsp;</td>
+								<td width="440" style="border-top:1px solid #FFF0D7;">&nbsp;</td>
+								<td width="10" style="border-top:1px solid #FFF0D7; border-right:1px solid #FFF0D7;">
+									&nbsp;</td>
+							</tr>
+							<tr>
+								<td align="center" style="color:#ff2200"><img src="/Public/Image/in_4005.gif"
+																			  align="left"><b>客服</b><br>回复
+								</td>
+								<td height="60" background="/Public/Image/in_4004.gif">&nbsp;</td>
+								<td style="color:#ff2200" valign="top">
+									{$r.reply_content}
+									</td>
+								<td style="border-top:1px solid #FFF0D7; border-right:1px solid #FFF0D7;">&nbsp;</td>
+							</tr>
+							<tr>
+								<td style="border-bottom:1px solid #FFF0D7;" colspan="3">&nbsp;</td>
+								<td style="border-bottom:1px solid #FFF0D7; border-right:1px solid #FFF0D7;">&nbsp;</td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="25"></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="5" background="/Public/Image/line_101.gif"></td>
+				</tr>
+				</tbody>
+			</table>
+		</volist>
+
+
+
+
+
+		<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tbody>
 			<tr>
-				<td width="100" align="right">{if  $r['required']}<font color="red">*</font>{/if} {if  APP_LANG}{:L($r[field])}{else}{$r.name}{/if}</td>
-				<td id="box_{$r['field']}">
-				{$r|getform=$form,###}
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td height="33" align="center"  style="color:#888888" class="pages">
+					{$pages}
 				</td>
 			</tr>
-		</if>
-		</volist>
-		<tr>
-				<td width="100"></td>
-				<td><INPUT TYPE="submit"  value="{:L(dosubmit)}" class="button" >
-		<input TYPE="reset"  value="{:L(cancel)}" class="button"></td>
-				</tr>
+			<tr>
+				<td height="30"></td>
+			</tr>
+			</tbody>
 		</table>
-		</form>
-		</div>
- 
 
-		<br>
-</div>
 
+
+	</TD><TD width="25"><img src="/Public/Image/in_2024.png"></TD>
+	</TR>
+</table>
+
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" background="/Public/Image/in_2022.png">
+	<TR valign="top">
+		<TD width="25" height="5"></TD>
+		<TD width="210" background="/Public/Image/in_2017.png">
+			<div style="position:absolute; z-index:1;"><div style="position:absolute; left:0px; top:-95px; z-index:1"><img src="/Public/Image/in_2019.png" border="0"></div></div>
+		</TD>
+		<TD width="765"></TD>
+	</TR>
+</table>
+
+<script type="text/javascript"  src="/Public/Image/B_open.js"></script>
+<script type="text/javascript">
+	function zOpen(){
+		var diag = new Dialog("Diag2");
+		diag.Width = 700;
+		diag.Height = 360;
+		diag.Title = "我要提问";
+		diag.URL = "{$site_url}/index.php?m=Guestbook&a=index&id=60";
+		diag.show();
+	}
+</script>
 

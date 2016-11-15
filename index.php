@@ -16,7 +16,7 @@ define('UPDATETIME','20121225');
 define('APP_NAME','Yourphp');
 define('APP_PATH','./Yourphp/');
 define('APP_LANG',true);//禁止多语言
-define('APP_DEBUG',false);//开启调试模式
+define('APP_DEBUG',true);//开启调试模式
 define('THINK_PATH','./Core/');
 
 require(THINK_PATH.'Core.php');

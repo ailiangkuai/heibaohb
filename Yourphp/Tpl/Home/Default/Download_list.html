@@ -1,18 +1,112 @@
+<include file="Block:nav"/>
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="120" background="/Public/Image/in_2021.png">
+	<TR>
+		<TD align="center">
+			<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='950' height='120' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' id=ShockwaveFlash1>
+				<param name='movie' value='{$Categorys[$bcid][flash]}'>
+				<param name='wmode' value='transparent'>
+				<param name='quality' value='high'>
+				<param name='scale' value='Exactfit'>
+				<embed src='{$Categorys[$bcid][flash]}' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer'  width='950' height='120' type='application/x-shockwave-flash'></embed>
+			</object>
+		</TD>
+	</TR>
+</table>
+
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" background="/Public/Image/in_2022.png">
+	<TR valign="top">
+		<TD width="25" height="650"><img src="/Public/Image/in_2023.png"></TD>
+		<TD width="210" background="/Public/Image/in_2017.png">
+
+			<table align="center" cellpadding="0" cellspacing="0" border="0" width="185">
+				<TR><TD><img src="{$Categorys[$bcid][image]}" border="0"></TD></TR>
+
+				<yp:subcat catid="$bcid">
+					<TR><Td height=12></TD></TR>
+					<TR><Td height=23>&nbsp; &nbsp;<img src='/Public/Image/dot_1001.gif' align='absmiddle'> &nbsp;<a href='{$r.url}' class=top4>{$r.catname}</a></TD></TR>
+					<TR><TD><img src='/Public/Image/in_2018.png'></TD></TR>
+				</yp:subcat>
 
 
-<div class="left">
-		<div class="pos"><b></b><span>{:L(catpos)} <a href="{:URL()}">{:L(home_font)}</a> &gt <YP:catpos  catid="catid" space=" > " /></span></div>
-		<div class="down_list">
-			<volist name="list" id="vo" key="k">
-			<dl class="img">
-			<dt><a href="{$vo.url}" target="_blank">{$vo.title}</a></dt>
-			<dd class="desc">{:L(Down_desc)}:{$vo.description}</dd>
-			<dd class="ext">{:L(Down_ext)}:{$vo.ext} &nbsp;&nbsp;&nbsp;&nbsp;{:L(Down_size)}:{$vo.size}</dd>
-			</dl>
+
+				<TR><TD><img src='/Public/Image/in_2020.png'></TD></TR>
+			</table>
+
+		</TD><TD width="15"></TD><TD width="725">
+
+		<table align="center" cellpadding="0" cellspacing="0" border="0" width="725">
+			<TR><TD height="10"></TD></TR>
+			<TR>
+				<TD height="23"><img src="/Public/Image/dot_1002.gif" align="absmiddle"><font class="font03">{$catname}</font></TD>
+				<TD align="right" class="font01">当前位置: 首页 >
+					<YP:catpos  catid="catid" space=" &gt; " />&nbsp;
+				</TD>
+			</TR><TR><TD height="1" bgcolor="#D8D8D8" colspan="2"></TD></TR>
+		</table>
+		<table align="center" cellpadding="0" cellspacing="0" border="0" width="680">
+			<tbody><tr><td height="45" colspan="7" style="color:#FF0000; font-family:'黑体'; font-size:16px;">&nbsp;下载文件如果不能正常下载阅览，请下载并安装PDF Reader软件。 <a href="/Public/Image/install_reader10_cn_aih.exe"><img src="/Public/Image/ad_1001.jpg" border="0" align="absmiddle"></a></td></tr>
+			<tr bgcolor="#abacaf" style="color:#FFFFFF; font-weight:bold;">
+				<td width="374" height="30">&nbsp; 信息标题</td>
+				<td><img src="/Public/Image/in_5043.gif"></td><td width="90" align="center">&nbsp; 文件大小</td>
+				<td><img src="/Public/Image/in_5043.gif"></td><td width="120" align="center">&nbsp; 更新日期</td>
+				<td><img src="/Public/Image/in_5043.gif"></td><td width="90" align="center">下载</td></tr>
+			</tbody></table>
+		<table align="center" cellpadding="0" cellspacing="0" border="0" width="680">
+			<tbody>
+			<volist  name="list" id="r" key="k">
+			<tr>
+				<td width="380" height="5"></td>
+				<td width="90"></td>
+				<td width="120"></td>
+				<td width="90"></td>
+			</tr>
+			<tr>
+				<td height="32">&nbsp;<img src="/Public/Image/dot_1003.gif">&nbsp; <a
+						href="__ROOT__/index.php?m=Download&a=down&id={$r.id}" class="top3"
+						target="_blank">{$r.title}</a></td>
+				<td style="color:#666666;">&nbsp; 61Kb</td>
+				<td align="center" style="color:#666666;">2012-02-10</td>
+				<td align="center">[<a href="__ROOT__/index.php?m=Download&a=down&id={$r.id}"
+									   class="top5" target="_blank">点击下载</a>]
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" height="8" background="/Public/Image/line_101.gif"></td>
+			</tr>
 			</volist>
-		</div>
-		 <div id="pages" class="page">{$pages}</div>
-		<br>
-</div>
+
+			</tbody>
+		</table>
 
 
+		<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tbody>
+			<tr>
+				<td height="10"></td>
+			</tr>
+			<tr>
+				<td height="33" align="center"  style="color:#888888" class="pages">
+					{$pages}
+				</td>
+			</tr>
+			<tr>
+				<td height="30"></td>
+			</tr>
+			</tbody>
+		</table>
+
+
+
+	</TD><TD width="25"><img src="/Public/Image/in_2024.png"></TD>
+	</TR>
+</table>
+
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" background="/Public/Image/in_2022.png">
+	<TR valign="top">
+		<TD width="25" height="5"></TD>
+		<TD width="210" background="/Public/Image/in_2017.png">
+			<div style="position:absolute; z-index:1;"><div style="position:absolute; left:0px; top:-95px; z-index:1"><img src="/Public/Image/in_2019.png" border="0"></div></div>
+		</TD>
+		<TD width="765"></TD>
+	</TR>
+</table>

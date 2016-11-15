@@ -1,0 +1,106 @@
+<include file="Block:nav"/>
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="120" background="/Public/Image/in_2021.png">
+		<TR>
+			<TD align="center">
+				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='950' height='120' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' id=ShockwaveFlash1>
+					<param name='movie' value='{$Categorys[$bcid][flash]}'>
+					<param name='wmode' value='transparent'>
+					<param name='quality' value='high'>
+					<param name='scale' value='Exactfit'>
+					<embed src='{$Categorys[$bcid][flash]}' quality='high' pluginspage='http://www.macromedia.com/go/getflashplayer'  width='950' height='120' type='application/x-shockwave-flash'></embed>
+				</object>
+			</TD>
+		</TR>
+	</table>
+
+	<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" background="/Public/Image/in_2022.png">
+		<TR valign="top">
+			<TD width="25" height="650"><img src="/Public/Image/in_2023.png"></TD>
+			<TD width="210" background="/Public/Image/in_2017.png">
+
+				<table align="center" cellpadding="0" cellspacing="0" border="0" width="185">
+					<TR><TD><img src="{$Categorys[$bcid][image]}" border="0"></TD></TR>
+
+                    <yp:subcat catid="$bcid">
+					<TR><Td height=12></TD></TR>
+					<TR><Td height=23>&nbsp; &nbsp;<img src='/Public/Image/dot_1001.gif' align='absmiddle'> &nbsp;<a href='{$r.url}' class=top4>{$r.catname}</a></TD></TR>
+					<TR><TD><img src='/Public/Image/in_2018.png'></TD></TR>
+                    </yp:subcat>
+
+
+
+					<TR><TD><img src='/Public/Image/in_2020.png'></TD></TR>
+				</table>
+
+			</TD><TD width="15"></TD><TD width="725">
+
+			<table align="center" cellpadding="0" cellspacing="0" border="0" width="725">
+				<TR><TD height="10"></TD></TR>
+				<TR>
+					<TD height="23"><img src="/Public/Image/dot_1002.gif" align="absmiddle"><font class="font03">{$catname}</font></TD>
+					<TD align="right" class="font01">当前位置: 首页 >
+                        <YP:catpos  catid="catid" space=" &gt; " />&nbsp;
+                    </TD>
+				</TR><TR><TD height="1" bgcolor="#D8D8D8" colspan="2"></TD></TR>
+			</table>
+
+			<table align="center" cellpadding="0" cellspacing="0" border="0" width="720">
+				<tbody>
+				<tr>
+					<td height="38" width="240"></td>
+					<td width="240"></td>
+					<td width="240"></td>
+				</tr>
+				<?php $list = array_chunk($list,3); ?>
+				<?php foreach($list as $row): ?>
+				<tr align="center" valign="top">
+					<?php foreach($row as $r): ?>
+					<td>
+						<a href="{$r.url}" class="top6" target="_blank"><img
+								src="{$r.thumb}" width="205" height="260" border="0">
+							<div align="left" class="img01">{$r.title}</div>
+						</a>
+					</td>
+					<?php endforeach; ?>
+				</tr>
+				<tr>
+					<td height="25"></td>
+				</tr>
+				<?php endforeach; ?>
+
+
+				</tbody>
+			</table>
+
+
+			<table align="center" cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tbody>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<tr>
+					<td height="33" align="center"  style="color:#888888" class="pages">
+						{$pages}
+					</td>
+				</tr>
+				<tr>
+					<td height="30"></td>
+				</tr>
+				</tbody>
+			</table>
+
+
+
+		</TD><TD width="25"><img src="/Public/Image/in_2024.png"></TD>
+		</TR>
+	</table>
+
+	<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" background="/Public/Image/in_2022.png">
+		<TR valign="top">
+			<TD width="25" height="5"></TD>
+			<TD width="210" background="/Public/Image/in_2017.png">
+				<div style="position:absolute; z-index:1;"><div style="position:absolute; left:0px; top:-95px; z-index:1"><img src="/Public/Image/in_2019.png" border="0"></div></div>
+			</TD>
+			<TD width="765"></TD>
+		</TR>
+	</table>

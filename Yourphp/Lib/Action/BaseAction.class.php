@@ -143,6 +143,9 @@ class BaseAction extends Action
 
 		if($module=='Guestbook'){
 			$where['status']=array('eq',1);
+            $title = safe_replace($_GET['keyword']);
+            $title && $where['title'] = array('like', '%' . safe_replace($_GET['keyword']) . '%');
+
 			$this->dao= M($module);
 			$count = $this->dao->where($where)->count();
 			if($count){

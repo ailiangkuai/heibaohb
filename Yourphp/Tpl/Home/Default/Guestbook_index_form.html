@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
+    <link href="/Public/Css/A_css.css" rel="stylesheet" type="text/css">
+</HEAD>
+<BODY topmargin="0" leftmargin="0" rightmargin="0">
+
+<table cellpadding="0" cellspacing="0" border="0" width="660" align="center">
+    <TR>
+        <TD height="10" colspan="2"></TD>
+    </TR>
+    <TR>
+        <TD height="70" width="60" align="center"><img src="/Public/Image/in_4007.gif"></TD>
+        <TD style="color:#888888"><img src="/Public/Image/in_4008.gif" border="0"><br>&nbsp;此处作为建议收集，我们客服人员尽力及时处理您的问题
+        </TD>
+    </TR>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" width="660" align="center">
+    <form name="myform" id="myform" action="{:URL('User-Post/insert')}" method="post">
+
+        <input type="hidden" name="catid" value="57"/>
+        <input type="hidden" name="moduleid" value="{$moduleid}"/>
+        <input type="hidden" name="lang" value="{$langid}"/>
+
+        <TR>
+            <TD width="110" align="right" height="26" style="color:#666666;">请填写提问标题：</TD>
+            <TD><INPUT name="title" type="text" maxlength="50" style=" width:500" class="tab5"></TD>
+        </TR>
+        <TR>
+            <TD width="110" align="right" height="35" style="color:#666666;">请填写您的姓名：</TD>
+            <TD><INPUT name="username" type="text" maxlength="50" style=" width:60" class="tab5">&nbsp; 电话：<INPUT
+                    name="telephone" type="text" maxlength="50" style=" width:100" class="tab5">&nbsp; Email：<INPUT
+                    name="email" type="text" maxlength="50" style=" width:100" class="tab5"></TD>
+        </TR>
+        <TR>
+            <TD width="110" align="right" height="26" style="color:#666666;" valign="top">请填写提问内容：</TD>
+            <TD><TEXTAREA name="content" rows=8 style=" width:500;border:1px solid #bbbbbb;"></TEXTAREA></TD>
+        </TR>
+        <TR>
+            <TD height="70"></TD>
+            <TD><input type="hidden" name="action" value="true">
+                <input type="text" name="verifyCode" value="请输入验证码" onFocus="if (this.value=='请输入验证码'){this.value=''};"
+                       onBlur="if (this.value==''){this.value='请输入验证码'};"
+                       style=" color:#888888; width:100; height:23; padding:3px;">&nbsp;<font
+                        face="Arial, Helvetica, sans-serif" color="#444444"
+                        style=" font-size:14px; font-weight:bold;letter-spacing:1px;">
+                    <img src="/index.php?m=Index&amp;a=verify"  class="checkcode" align="absmiddle" title="点击刷新验证码" id="verifyImage">
+                </font> &nbsp; &nbsp; &nbsp;
+                <input type="image" src="/Public/Image/in_4009.gif" align="absmiddle">
+            </TD>
+        </TR>
+    </form>
+</table>
+
+</body>
+</html>
+{__NOLAYOUT__}

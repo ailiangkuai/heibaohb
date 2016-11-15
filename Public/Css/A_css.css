@@ -115,3 +115,7 @@ a:hover.top8{ font-size: 12px; color:#FF0000; text-decoration: underline; positi
     margin-right: 10px;}
 .pages .a1,.pages span.cur,.pages .num{
     display: none;}
+
+.article-content img{
+    max-width:561px;
+    height:auto;}
