@@ -65,7 +65,7 @@
 						href="__ROOT__/index.php?m=Download&a=down&id={$r.id}" class="top3"
 						target="_blank">{$r.title}</a></td>
 				<td style="color:#666666;">&nbsp; 61Kb</td>
-				<td align="center" style="color:#666666;">2012-02-10</td>
+				<td align="center" style="color:#666666;">{$r.createtime|toDate=###,'Y-m-d'}</td>
 				<td align="center">[<a href="__ROOT__/index.php?m=Download&a=down&id={$r.id}"
 									   class="top5" target="_blank">点击下载</a>]
 				</td>
