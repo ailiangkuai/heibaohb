@@ -47,7 +47,7 @@ class CodeAction extends BaseAction
 		$this->dao= M('Code');
 
         $model = $this->dao->where($where)->limit(1)->find();
-        $model && $this->dao->where($where)->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
+        !is_null($model) && $this->dao->where(array('id'=>$model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
         $model && ++$model['hits'];
         $this->assign('model',$model);
 		$this->display();

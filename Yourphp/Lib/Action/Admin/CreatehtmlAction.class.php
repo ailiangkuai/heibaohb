@@ -43,9 +43,9 @@ class CreatehtmlAction extends AdminbaseAction {
 				foreach ($this->categorys as $r){
 					if($r['type']==1 && $r['ishtml']==0) continue;
 					if($moduleid && $r['moduleid'] !=  $moduleid) continue;
-					if(ACTION_NAME=='Updateurl' && $r['module']=='Page') continue;
+					if(ACTION_NAME=='Updateurl' && ($r['module']=='Page'||$r['module']=='Code')) continue;
 					if(ACTION_NAME=='Createlist' && $r['ishtml']!=1) continue;
-					if((ACTION_NAME=='Createshow' && $r['ishtml']!=1) || (ACTION_NAME=='Createshow' && $r['module']=='Page')) continue;				
+					if((ACTION_NAME=='Createshow' && $r['ishtml']!=1) || (ACTION_NAME=='Createshow' && ($r['module']=='Page'||$r['module']=='Code'))) continue;
 					$array[] = $r;
 				}
 				import ( '@.ORG.Tree' );	
@@ -164,6 +164,7 @@ class CreatehtmlAction extends AdminbaseAction {
 				
 			if($this->module && !$_SESSION['moduleids']){
 					foreach($this->module as $moduleid=>$r){
+                        if($moduleid==13) continue;
 						$tablename=C('DB_PREFIX').$this->module[$moduleid]['name'];
 						$db=D('');
 						$db =   DB::getInstance();
@@ -295,7 +296,7 @@ class CreatehtmlAction extends AdminbaseAction {
 				if(empty($_SESSION['catids']) && $catids){
 					if($catids[0] == 0) { 
 							foreach($this->categorys as $id=>$cat) {
-								if($cat['child'] || $cat['type']!=0 || $cat['module']=='Page') continue;
+								if($cat['child'] || $cat['type']!=0 || $cat['module']=='Page' ||$cat['module']=='Code') continue;
 								$catids[] = $id;
 							}
 					}
@@ -378,9 +379,9 @@ class CreatehtmlAction extends AdminbaseAction {
 				foreach ($this->categorys as $r){
 					if($r['type']==1 && $r['ishtml']==0) continue;
 					if($_GET['moduleid'] && $r['moduleid'] !=  $_GET['moduleid']) continue;
-					if(ACTION_NAME=='Updateurl' && $r['module']=='Page') continue;
+					if(ACTION_NAME=='Updateurl' && ($r['module']=='Page'||$r['module']=='Code')) continue;
 					if(ACTION_NAME=='Createlist' && $r['ishtml']!=1) continue;
-					if((ACTION_NAME=='Createshow' && $r['ishtml']!=1) || (ACTION_NAME=='Createshow' && $r['module']=='Page')) continue;				
+					if((ACTION_NAME=='Createshow' && $r['ishtml']!=1) || (ACTION_NAME=='Createshow' && ($r['module']=='Page'||$r['module']=='Code'))) continue;
 					if($r['child'] && ACTION_NAME!='Createlist'){ 
 						$r['disabled'] = 'disabled';
 					}else{
@@ -406,9 +407,9 @@ class CreatehtmlAction extends AdminbaseAction {
 				foreach ($this->categorys as $r){
 					if($r['type']==1 && $r['ishtml']==0) continue;
 					if($moduleid && $r['moduleid'] !=  $moduleid) continue;
-					if(ACTION_NAME=='Updateurl' && $r['module']=='Page') continue;
+					if(ACTION_NAME=='Updateurl' && ($r['module']=='Page'||$r['module']=='Code')) continue;
 					if(ACTION_NAME=='Createlist' && $r['ishtml']!=1) continue;
-					if((ACTION_NAME=='Createshow' && $r['ishtml']!=1) || (ACTION_NAME=='Createshow' && $r['module']=='Page')) continue;				
+					if((ACTION_NAME=='Createshow' && $r['ishtml']!=1) || (ACTION_NAME=='Createshow' && ($r['module']=='Page'||$r['module']=='Code'))) continue;
 					if($r['child'] && ACTION_NAME!='Createlist'){ 
 						$r['disabled'] = 'disabled';
 					}else{
@@ -439,7 +440,7 @@ class CreatehtmlAction extends AdminbaseAction {
 					if($catids[0] == 0) { 
 						$catids=array();
 						foreach($this->categorys as $id=>$cat) {
-							if($cat['child'] || $cat['type']!=0 || $cat['module']=='Page' || $cat['ishtml']!=1) continue;
+							if($cat['child'] || $cat['type']!=0 || $cat['module']=='Page' || $cat['ishtml']!=1||$cat['module']=='Code') continue;
 							if($moduleid){									
 								if($cat['moduleid']!=$moduleid) continue;
 							}

@@ -8,3 +8,5 @@
 3.安装在子目录下时请先进后台修复栏目数据和更新缓存，更新网站->更新内容页URL三步操作后,前台栏目链接和css栏目才可以正确显示.
 
 后台访问地址 http://你的域名/admin.php
+
+www.heibaohb.com/Code/index.html

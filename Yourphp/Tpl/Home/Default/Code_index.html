@@ -438,13 +438,18 @@
             <br/>
             <?php if($code): ?>
             <div id="fwresult">您所查询的防伪码是：{$code}<br/>
-                <?php if($model['hits']>5): ?>
-                查询结果：您所查询的数码已被多次查询，谨防假冒。如需咨询请拨打电话：010-84850315。<br/>
+                <?php if($model): ?>
+                    <?php if($model['hits']>5): ?>
+                    查询结果：您所查询的数码已被多次查询，谨防假冒。如需咨询请拨打电话：010-84850315。<br/>
+                    <?php else: ?>
+                    查询结果：产品是真货,这是第{$model.hits}次查询<?php if($model['hits']!=1): ?>上次查询的时间是<?php echo date('Y-m-d H:i:s',$model['updatetime']); endif; ?>
+                    <?php endif; ?>
                 <?php else: ?>
-                查询结果：产品是真货,这是第{$model.hits}次查询<?php if($model['hits']!=1): ?>上次查询的时间是<?php echo date('Y-m-d H:i:s',$model['updatetime']); endif; ?>
+                 查询结果：防伪码不存在，你可能购买到了假货，如需咨询请拨打电话：010-84850315。<br/>
                 <?php endif; ?>
             </div>
             <?php endif; ?>
+
         </div>
 
         <DIV class=clear></DIV>

@@ -1,4 +1,4 @@
-RewriteEngine Off
+RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php?s=$1 [QSA,PT,L]
@@ -6,5 +6,5 @@ RewriteRule ^(.*)Yourphp/Tpl/(.*).html$ /403.html [QSA,PT,L]
 RewriteRule ^(.*)/(.*).php$ /403.html [QSA,PT,L]
 RewriteRule ([a-zA-Z]{1,})/([a-zA-Z]{1,})/([0-9]{1,})\.html$ index.php?m=$1&a=$2&id=$3
 
-RewriteCond %{http_host} ^test.com [NC]
-RewriteRule ^(.*)$ http://www.test.com/$1 [L,R=301]
+#RewriteCond %{http_host} ^test.com [NC]
+#RewriteRule ^(.*)$ http://www.test.com/$1 [L,R=301]

@@ -97,7 +97,7 @@
 		</TR>
 	</table>
 	<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="80" background="/Public/Image/in_1002.png">
-		<form action="__ROOT__?" method="get" target="_blank">
+		<form action="<?php echo ($site_url); ?>?" method="get" target="_blank">
 			<input type="hidden" id=""  name="m" value="Search"/><?php if(APP_LANG) : ?><input type="hidden" name="l" value="<?php echo ($l); ?>" /><?php endif;?>
 			<input type="hidden" name="module" value="Product">
 			<input type="hidden" name="catid" value="22">
