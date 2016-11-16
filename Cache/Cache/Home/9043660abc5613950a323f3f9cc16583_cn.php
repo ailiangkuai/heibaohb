@@ -5,9 +5,6 @@
 	<meta name="robots" content="index, follow" />
 	<meta name="keywords" content="<?php echo ($seo_keywords); ?>" />
 	<meta name="description" content="<?php echo ($seo_description); ?>" />
-	<meta name="Copyright" content="Copyright (c) 2008 yourphp.cn" />
-	<meta name="author" content="<?php echo ($site_name); ?>--Powered by yourphp">
-	<meta name="generator" content="Yourphp 2.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 	<title><?php echo ($seo_title); ?>-<?php echo ($site_name); ?></title>
 	<link href="__ROOT__/index.php?m=Format&a=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
@@ -100,7 +97,10 @@
 		</TR>
 	</table>
 	<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="80" background="/Public/Image/in_1002.png">
-		<form action="Product.asp" method="post" target="_blank">
+		<form action="__ROOT__?" method="get" target="_blank">
+			<input type="hidden" id=""  name="m" value="Search"/><?php if(APP_LANG) : ?><input type="hidden" name="l" value="<?php echo ($l); ?>" /><?php endif;?>
+			<input type="hidden" name="module" value="Product">
+			<input type="hidden" name="catid" value="22">
 			<TR>
 				<TD width="450">
 				</TD>
@@ -125,7 +125,7 @@
 					<center>
 						<img src="/Public/Image/bg_1001.gif" width="1" height="18">
 					</center>
-					<input name="title" type="text" maxlength="50" style="color:#666666; width:108px; border:0px #333333 solid;">
+					<input name="keyword" type="text" maxlength="50" style="color:#666666; width:108px; border:0px #333333 solid;">
 					<img src="/Public/Image/bg_1001.gif" width="17" height="1">
 					<input type="image" src="/Public/Image/in_1036.gif" align="absmiddle">
 				</TD>
@@ -133,12 +133,12 @@
 					<center>
 						<img src="/Public/Image/bg_1001.gif" width="1" height="21">
 					</center>
-					<a href="#" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.hbheibao.com');"
+					<a href="#" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('<?php echo ($site_url); ?>');"
 					   class="top3">
 						设为首页
 					</a>
 					|
-					<a href="javascript:window.external.AddFavorite('http://www.hbheibao.com','深圳市新黑豹建材有限公司')"
+					<a href="javascript:window.external.AddFavorite('<?php echo ($site_url); ?>','深圳市新黑豹建材有限公司')"
 					   class="top3">
 						加入收藏
 					</a>
@@ -309,7 +309,7 @@
                     </TR>
                     <TR>
                         <TD height="31" align="center">
-                            <a href="Product.asp?UidA=7&UidB=24" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[41][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5002.png" alt="新品上市" onMouseOver="this.src='/Public/Image/in_5007.png';"
                                      onMouseOut="this.src='/Public/Image/in_5002.png';" border="0">
                             </a>
@@ -321,7 +321,7 @@
                     </TR>
                     <TR>
                         <TD height="31" align="center">
-                            <a href="Product.asp?UidA=7&UidB=25" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[42][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5003.png" alt="防水涂料" onMouseOver="this.src='/Public/Image/in_5008.png';"
                                      onMouseOut="this.src='/Public/Image/in_5003.png';" border="0">
                             </a>
@@ -333,7 +333,7 @@
                     </TR>
                     <TR>
                         <TD height="31" align="center">
-                            <a href="Product.asp?UidA=7&UidB=28" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[43][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5004.png" alt="防水砂浆改性剂" onMouseOver="this.src='/Public/Image/in_5009.png';"
                                      onMouseOut="this.src='/Public/Image/in_5004.png';" border="0">
                             </a>
@@ -345,7 +345,7 @@
                     </TR>
                     <TR>
                         <TD height="31" align="center">
-                            <a href="Product.asp?UidA=7&UidB=27" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[44][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5005.png" alt="防水卷材" onMouseOver="this.src='/Public/Image/in_5010.png';"
                                      onMouseOut="this.src='/Public/Image/in_5005.png';" border="0">
                             </a>
@@ -357,7 +357,7 @@
                     </TR>
                     <TR>
                         <TD height="31" align="center">
-                            <a href="Product.asp?UidA=7&UidB=29" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[45][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5006.png" alt="嵌缝材料" onMouseOver="this.src='/Public/Image/in_5011.png';"
                                      onMouseOut="this.src='/Public/Image/in_5006.png';" border="0">
                             </a>
@@ -369,7 +369,7 @@
                     </TR>
                     <TR>
                         <TD height="31" align="center">
-                            <a href="News.asp?uidA=6&uidB=39" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[39][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5012.png" alt="施工指南" onMouseOver="this.src='/Public/Image/in_5013.png';"
                                      onMouseOut="this.src='/Public/Image/in_5012.png';" border="0">
                             </a>
@@ -390,7 +390,7 @@
                        height="285" background="/Public/Image/in_5014.png">
                     <TR>
                         <TD height="40" align="right">
-                            <a href="News.asp?UidA=6&UidB=19" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[35][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5017.gif" border="0">
                             </a>
                             &nbsp;
@@ -398,34 +398,35 @@
                     </TR>
                     <TR>
                         <TD height="80">
-                            <table align='center' cellpadding='0' cellspacing='0' border='0' width='445'>
+                            <?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid=35  AND posid =1")->order("id desc")->limit("1")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><table align='center' cellpadding='0' cellspacing='0' border='0' width='445'>
                                 <TR>
                                     <TD width='140' align=center>
-                                        <a href='News_show.asp?id=1' target='_blank' class='top4'>
-                                            <img src='image_news/20117/201172044169999.jpg' width='120' height='80'
+                                        <a href='<?php echo ($r["url"]); ?>' target='_blank' class='top4'>
+                                            <img src='<?php echo ($r["thumb"]); ?>' width='120' height='80'
                                                  border=0>
                                         </a>
                                     </TD>
                                     <TD width='3'>
                                     </TD>
                                     <TD width='290'>
-                                        <a href='News_show.asp?id=1' target='_blank' class='top1' style='color:#4B4B4B; font-weight:bold;'>
-                                            我公司在第十三届全国防水材料技术交流会上..
+                                        <a href='<?php echo ($r["url"]); ?>' target='_blank' class='top1' style='color:#4B4B4B; font-weight:bold;'>
+                                            <?php echo (str_cut($r["title"],30)); ?>
                                         </a>
                                         <center>
                                             <img src='/Public/Image/bg_1001.gif' width='1' height='4'>
                                         </center>
                                         <font style='color:#999999; line-height:17px;'>
-                                            ★ 深圳市新黑豹建材有限公司热烈祝贺第十三届全国防水材料技术交流会圆满成功！ ★ 热烈祝贺深圳市新黑豹建材有限公司荣...
+                                            <?php echo (str_cut($r["description"],100)); ?>
                                         </font>
-                                        <a href='News_show.asp?id=1' target='_blank' class='top6'>
+                                        <a href='<?php echo ($r["url"]); ?>' target='_blank' class='top6'>
                                             [点击阅读]
                                         </a>
                                     </TD>
                                     <TD width='12'>
                                     </TD>
                                 </TR>
-                            </table>
+                            </table><?php endforeach; endif;?>
+
                         </TD>
                     </TR>
                     <TR>
@@ -435,66 +436,16 @@
                     <TR>
                         <TD valign="top">
                             <table align='center' cellpadding='0' cellspacing='0' border='0' width='430'>
-                                <TR>
+                                <?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid=35")->order("id desc")->limit("6")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><TR>
                                     <TD height='23' class=font08>
                                         &nbsp;
                                         <img src='/Public/Image/dot_1003.gif'>
-                                        &nbsp; 2016-08-12 |
-                                        <a href='News_show.asp?id=683' class='top8' target='_blank'>
-                                            我公司被评为优秀品牌战略合作伙伴
+                                        &nbsp; <?php echo (todate($r["createtime"],'Y-m-d')); ?> |
+                                        <a href='<?php echo ($r["url"]); ?>' class='top8' target='_blank'>
+                                            <?php echo (str_cut($r["title"],40)); ?>
                                         </a>
                                     </TD>
-                                </TR>
-                                <TR>
-                                    <TD height='23' class=font08>
-                                        &nbsp;
-                                        <img src='/Public/Image/dot_1003.gif'>
-                                        &nbsp; 2016-06-13 |
-                                        <a href='News_show.asp?id=669' class='top8' target='_blank'>
-                                            全国第十八届防水保温材料技术交流大会在北京召开
-                                        </a>
-                                    </TD>
-                                </TR>
-                                <TR>
-                                    <TD height='23' class=font08>
-                                        &nbsp;
-                                        <img src='/Public/Image/dot_1003.gif'>
-                                        &nbsp; 2016-06-08 |
-                                        <a href='News_show.asp?id=668' class='top8' target='_blank'>
-                                            广东省建筑防水材料协会选举大会在广州召开
-                                        </a>
-                                    </TD>
-                                </TR>
-                                <TR>
-                                    <TD height='23' class=font08>
-                                        &nbsp;
-                                        <img src='/Public/Image/dot_1003.gif'>
-                                        &nbsp; 2016-04-23 |
-                                        <a href='News_show.asp?id=664' class='top8' target='_blank'>
-                                            第七届种植屋面技术与市场研讨会暨2016年种植屋面..
-                                        </a>
-                                    </TD>
-                                </TR>
-                                <TR>
-                                    <TD height='23' class=font08>
-                                        &nbsp;
-                                        <img src='/Public/Image/dot_1003.gif'>
-                                        &nbsp; 2016-03-30 |
-                                        <a href='News_show.asp?id=666' class='top8' target='_blank'>
-                                            湖北省建筑防水行业质量提升工作大会在武汉召开
-                                        </a>
-                                    </TD>
-                                </TR>
-                                <TR>
-                                    <TD height='23' class=font08>
-                                        &nbsp;
-                                        <img src='/Public/Image/dot_1003.gif'>
-                                        &nbsp; 2016-03-22 |
-                                        <a href='News_show.asp?id=662' class='top8' target='_blank'>
-                                            热烈祝贺第一届中国建筑防水青年企业家分会年会成功举办
-                                        </a>
-                                    </TD>
-                                </TR>
+                                </TR><?php endforeach; endif;?>
                             </table>
                         </TD>
                     </TR>
@@ -505,7 +456,7 @@
                        height="206" background="/Public/Image/in_5015.png">
                     <TR>
                         <TD height="35" align="right">
-                            <a href="News.asp?UidA=6&UidB=17" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[34][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5018.gif" border="0">
                             </a>
                             &nbsp;
@@ -514,7 +465,27 @@
                     <TR>
                         <TD align="center">
                             <DIV id=rolllink style="OVERFLOW: hidden; WIDTH: 210px; HEIGHT: 150px">
-                                <DIV id=rolllink1><table cellpadding='0' cellspacing='0' border='0' width='210'><TR><TD valign='top' align=center width=20><font style='color:#919191;'>·</font></TD><TD style='line-height:18px;'><a href='News_show.asp?id=679' class='top1' target='_blank'>紧急告知客户</a><br><font style='color:#FF931E'>[2016年10月12日]</font></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD colspan='2' height='2' background='image/line_102.gif'></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD valign='top' align=center width=20><font style='color:#919191;'>·</font></TD><TD style='line-height:18px;'><a href='News_show.asp?id=677' class='top1' target='_blank'>2016年国庆节放假温馨提示</a><br><font style='color:#FF931E'>[2016年9月28日]</font></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD colspan='2' height='2' background='image/line_102.gif'></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD valign='top' align=center width=20><font style='color:#919191;'>·</font></TD><TD style='line-height:18px;'><a href='News_show.asp?id=676' class='top1' target='_blank'>2016年中秋节放假温馨提示</a><br><font style='color:#FF931E'>[2016年9月12日]</font></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD colspan='2' height='2' background='image/line_102.gif'></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD valign='top' align=center width=20><font style='color:#919191;'>·</font></TD><TD style='line-height:18px;'><a href='News_show.asp?id=675' class='top1' target='_blank'>悬赏举报</a><br><font style='color:#FF931E'>[2016年9月8日]</font></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD colspan='2' height='2' background='image/line_102.gif'></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD valign='top' align=center width=20><font style='color:#919191;'>·</font></TD><TD style='line-height:18px;'><a href='News_show.asp?id=674' class='top1' target='_blank'>关于变更防伪查询电话及短信的温馨提示</a><br><font style='color:#FF931E'>[2016年8月21日]</font></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD colspan='2' height='2' background='image/line_102.gif'></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD valign='top' align=center width=20><font style='color:#919191;'>·</font></TD><TD style='line-height:18px;'><a href='News_show.asp?id=667' class='top1' target='_blank'>关于防伪查询的温馨提示</a><br><font style='color:#FF931E'>[2016年5月16日]</font></TD></TR><TR><TD colspan='2' height='8'></TD></TR><TR><TD colspan='2' height='2' background='image/line_102.gif'></TD></TR><TR><TD colspan='2' height='8'></TD></TR></table></DIV>
+                                <DIV id=rolllink1>
+                                    <table cellpadding='0' cellspacing='0' border='0' width='210'>
+                                        <?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid=34")->order("id desc")->limit("6")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><TR>
+                                            <TD valign='top' align=center width=20><font style='color:#919191;'>·</font>
+                                            </TD>
+                                            <TD style='line-height:18px;'><a href='<?php echo ($r["url"]); ?>' class='top1'
+                                                                             target='_blank'><?php echo (str_cut($r["title"],50)); ?></a><br><font
+                                                    style='color:#FF931E'>[<?php echo (todate($r["createtime"],'Y年m月d日')); ?>]</font></TD>
+                                        </TR>
+                                        <TR>
+                                            <TD colspan='2' height='8'></TD>
+                                        </TR>
+                                        <TR>
+                                            <TD colspan='2' height='2' background='/Public/Image/line_102.gif'></TD>
+                                        </TR>
+                                        <TR>
+                                            <TD colspan='2' height='8'></TD>
+                                        </TR><?php endforeach; endif;?>
+
+                                    </table>
+                                </DIV>
                                 <DIV id=rolllink2></DIV>
                             </DIV>
                             <SCRIPT>
@@ -546,7 +517,8 @@
                         </TD>
                     </TR>
                     <TR>
-                        <TD>
+                        <TD style="position: relative;width:230px;height: 75px;display: block; ">
+                            <a href="<?php echo ($Categorys[32][url]); ?>" style="background: url(about:blank);width:230px;height: 75px;display: block;position: absolute;" target="_blank"></a>
                             <object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='230'
                                     height='75' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0'
                                     id=ShockwaveFlash1>
@@ -610,7 +582,7 @@
                                 <img src="/Public/Image/bg_1001.gif" width="1" height="5">
                             </center>
                             输入防伪标签上的20密码数字(
-                            <a href="chaxun.asp" target="_blank" onMouseOver="document.getElementById('Fwsm_02').style.visibility ='visible';"
+                            <a href="<?php echo ($Categorys[46][url]); ?>" target="_blank" onMouseOver="document.getElementById('Fwsm_02').style.visibility ='visible';"
                                onMouseOut="document.getElementById('Fwsm_02').style.visibility ='hidden'; "
                                style="color:#FF6600;text-decoration: underline;">
                                 如何获取
@@ -648,7 +620,7 @@
                                    height="200" background="/Public/Image/in_5021.png">
                                 <TR>
                                     <TD height="35" align="right">
-                                        <a href="Comperate_yj.asp" class="top1" target="_blank">
+                                        <a href="<?php echo ($Categorys[50][url]); ?>" class="top1" target="_blank">
                                             <img src="/Public/Image/in_5017.gif" border="0">
                                         </a>
                                         &nbsp;
@@ -658,7 +630,7 @@
                                     <TD align="center">
 
                                         <TABLE cellSpacing=0 cellPadding=0 width=222 align=center border=0>
-                                            <TR><TD><DIV id=fc align="center" style="FILTER: progid:DXImageTransform.Microsoft.Fade ( duration=0.5,overlap=1.0 ); WIDTH: 222; HEIGHT: 156"><DIV style='DISPLAY:block'><A  href='Comperate_yj.asp' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='image_news/20118/201182753030000.jpg' width=222 height=156 border=0></A></DIV><DIV style='DISPLAY:none'><A  href='Comperate_yj.asp' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='image_news/20118/201182753011000.jpg' width=222 height=156 border=0></A></DIV><DIV style='DISPLAY:none'><A  href='Comperate_yj.asp' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='image_news/20118/201182752989000.jpg' width=222 height=156 border=0></A></DIV><DIV style='DISPLAY:none'><A  href='Comperate_yj.asp' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='image_news/20118/201182752966999.jpg' width=222 height=156 border=0></A></DIV><DIV style='DISPLAY:none'><A  href='Comperate_yj.asp' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='image_news/20118/201182752941000.jpg' width=222 height=156 border=0></A></DIV></DIV></TD></TR>
+                                            <TR><TD><DIV id=fc align="center" style="FILTER: progid:DXImageTransform.Microsoft.Fade ( duration=0.5,overlap=1.0 ); WIDTH: 222; HEIGHT: 156"><DIV style='DISPLAY:block'><A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='/Uploads/201611/201182753030000.jpg' width=222 height=156 border=0></A></DIV><DIV style='DISPLAY:none'><A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='/Uploads/201611/201182753011000.jpg' width=222 height=156 border=0></A></DIV><DIV style='DISPLAY:none'><A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='/Uploads/201611/201182752989000.jpg' width=222 height=156 border=0></A></DIV><DIV style='DISPLAY:none'><A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='/Uploads/201611/201182752966999.jpg' width=222 height=156 border=0></A></DIV><DIV style='DISPLAY:none'><A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank><IMG onmouseover='clearAuto();' onmouseout='setAuto()' src='/Uploads/201611/201182752941000.jpg' width=222 height=156 border=0></A></DIV></DIV></TD></TR>
                                             <TR><TD>
                                                 <div style="position:absolute; z-index:1">
                                                     <div style="z-index:1; position:absolute; top:1px; left:0px;">
@@ -666,7 +638,7 @@
                                                         <div id="inphoto_text"  style="width:222px; height:40px;">
                                                             <TABLE cellSpacing=0 cellPadding=0 width=222 align=center border=0>
                                                                 <TR>
-                                                                    <TD height="29" onMouseOver="clearAuto();" onMouseOut="setAuto()"><table align=center cellpadding=0 cellspacing=0 border=0 width="100%"><TR><TD><DIV id=con><DIV style='DISPLAY:block'>&nbsp;<A  href='Comperate_yj.asp' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV><DIV style='DISPLAY:none'>&nbsp;<A  href='Comperate_yj.asp' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV><DIV style='DISPLAY:none'>&nbsp;<A  href='Comperate_yj.asp' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV><DIV style='DISPLAY:none'>&nbsp;<A  href='Comperate_yj.asp' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV><DIV style='DISPLAY:none'>&nbsp;<A  href='Comperate_yj.asp' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV></DIV></TD></TR></table></TD>
+                                                                    <TD height="29" onMouseOver="clearAuto();" onMouseOut="setAuto()"><table align=center cellpadding=0 cellspacing=0 border=0 width="100%"><TR><TD><DIV id=con><DIV style='DISPLAY:block'>&nbsp;<A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV><DIV style='DISPLAY:none'>&nbsp;<A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV><DIV style='DISPLAY:none'>&nbsp;<A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV><DIV style='DISPLAY:none'>&nbsp;<A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV><DIV style='DISPLAY:none'>&nbsp;<A  href='<?php echo ($Categorys[50][url]); ?>' target=_blank style='color:#ffffff;font-family:黑体;font-size:16px;line-height:23px;text-decoration: none; '></A></DIV></DIV></TD></TR></table></TD>
                                                                     <TD height="29"><TABLE id=num cellSpacing=0 cellPadding=0  align=right border=0><TR><TD class=bigon onmouseover=clearAuto(); style='CURSOR: pointer' onclick=Mea(0); onmouseout=setAuto() align=middle width=19 height=15>1</TD><TD class=bigoff onmouseover=clearAuto(); style='CURSOR: pointer' onclick=Mea(1); onmouseout=setAuto() align=middle width=19 height=15>2</TD><TD class=bigoff onmouseover=clearAuto(); style='CURSOR: pointer' onclick=Mea(2); onmouseout=setAuto() align=middle width=19 height=15>3</TD><TD class=bigoff onmouseover=clearAuto(); style='CURSOR: pointer' onclick=Mea(3); onmouseout=setAuto() align=middle width=19 height=15>4</TD><TD class=bigoff onmouseover=clearAuto(); style='CURSOR: pointer' onclick=Mea(4); onmouseout=setAuto() align=middle width=19 height=15>5</TD></TR></TABLE></TD>
                                                                 </TR>
                                                             </TABLE>
@@ -762,7 +734,7 @@
                                    height="200" background="/Public/Image/in_5022.png">
                                 <TR>
                                     <TD height="40" align="right">
-                                        <a href="News.asp?UidA=6&UidB=21" class="top1" target="_blank">
+                                        <a href="<?php echo ($Categorys[38][url]); ?>" class="top1" target="_blank">
                                             <img src="/Public/Image/in_5017.gif" border="0">
                                         </a>
                                         &nbsp;
@@ -771,66 +743,16 @@
                                 <TR>
                                     <TD valign="top">
                                         <table align='center' cellpadding='0' cellspacing='0' border='0' width='430'>
-                                            <TR>
+                                           <?php  $_result=M("Article")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid=38")->order("id desc")->limit("6")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><TR>
                                                 <TD height='25' class=font08>
                                                     &nbsp;
                                                     <img src='/Public/Image/dot_1003.gif'>
-                                                    &nbsp; 2015-12-28 |
-                                                    <a href='News_show.asp?id=656' class='top8' target='_blank'>
-                                                        唉，武汉地铁7号线一工地漏了！
+                                                    &nbsp; <?php echo (todate($r["createtime"],'Y-m-d')); ?> |
+                                                    <a href='<?php echo ($r["title"]); ?>' class='top8' target='_blank'>
+                                                        <?php echo (str_cut($r["title"],40)); ?>
                                                     </a>
                                                 </TD>
-                                            </TR>
-                                            <TR>
-                                                <TD height='25' class=font08>
-                                                    &nbsp;
-                                                    <img src='/Public/Image/dot_1003.gif'>
-                                                    &nbsp; 2016-10-10 |
-                                                    <a href='News_show.asp?id=678' class='top8' target='_blank'>
-                                                        楼顶建起“发电站”解决漏水还能分钱
-                                                    </a>
-                                                </TD>
-                                            </TR>
-                                            <TR>
-                                                <TD height='25' class=font08>
-                                                    &nbsp;
-                                                    <img src='/Public/Image/dot_1003.gif'>
-                                                    &nbsp; 2016-08-16 |
-                                                    <a href='News_show.asp?id=673' class='top8' target='_blank'>
-                                                        如果不重视防水，70年产权的房屋将会怎样
-                                                    </a>
-                                                </TD>
-                                            </TR>
-                                            <TR>
-                                                <TD height='25' class=font08>
-                                                    &nbsp;
-                                                    <img src='/Public/Image/dot_1003.gif'>
-                                                    &nbsp; 2016-07-12 |
-                                                    <a href='News_show.asp?id=672' class='top8' target='_blank'>
-                                                        楼上漏水殃及楼下 邻里矛盾如何化解？
-                                                    </a>
-                                                </TD>
-                                            </TR>
-                                            <TR>
-                                                <TD height='25' class=font08>
-                                                    &nbsp;
-                                                    <img src='/Public/Image/dot_1003.gif'>
-                                                    &nbsp; 2016-07-04 |
-                                                    <a href='News_show.asp?id=671' class='top8' target='_blank'>
-                                                        上海一小区地库渗水如温泉 物业:没钱整修
-                                                    </a>
-                                                </TD>
-                                            </TR>
-                                            <TR>
-                                                <TD height='25' class=font08>
-                                                    &nbsp;
-                                                    <img src='/Public/Image/dot_1003.gif'>
-                                                    &nbsp; 2016-06-28 |
-                                                    <a href='News_show.asp?id=670' class='top8' target='_blank'>
-                                                        台北故宫南院防水施工延宕 林全：质量重要
-                                                    </a>
-                                                </TD>
-                                            </TR>
+                                            </TR><?php endforeach; endif;?>
                                         </table>
                                     </TD>
                                 </TR>
@@ -850,7 +772,7 @@
                        height="165" background="/Public/Image/in_5023.png">
                     <TR>
                         <TD height="31" align="right">
-                            <a href="Product.asp" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[22][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5017.gif" border="0">
                             </a>
                             &nbsp;
@@ -866,7 +788,26 @@
                                 <table align="center" cellpadding="0" cellspacing="0" border="0" width="668">
                                     <TR align="center">
                                         <TD width=668 id=demo1 valign=middle>
-                                            <Table cellpadding='0' cellspacing='0' border='0' width='100%'><TR><TD align=center><a href=Product_show.asp?id=61 target=_balnk  class='top1'><img src=image_news/201112/2011122163136999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=60 target=_balnk  class='top1'><img src=image_news/201112/2011122163179999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=59 target=_balnk  class='top1'><img src=image_news/20134/201342862335000.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=58 target=_balnk  class='top1'><img src=image_news/201112/2011122139450999.gif width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=57 target=_balnk  class='top1'><img src=image_news/201112/2011122164010000.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=56 target=_balnk  class='top1'><img src=image_news/201112/2011122249483999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=61 target=_balnk  class='top1'><img src=image_news/201112/2011122163136999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=60 target=_balnk  class='top1'><img src=image_news/201112/2011122163179999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=59 target=_balnk  class='top1'><img src=image_news/20134/201342862335000.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=58 target=_balnk  class='top1'><img src=image_news/201112/2011122139450999.gif width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=57 target=_balnk  class='top1'><img src=image_news/201112/2011122164010000.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=56 target=_balnk  class='top1'><img src=image_news/201112/2011122249483999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=61 target=_balnk  class='top1'><img src=image_news/201112/2011122163136999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=60 target=_balnk  class='top1'><img src=image_news/201112/2011122163179999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=59 target=_balnk  class='top1'><img src=image_news/20134/201342862335000.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=58 target=_balnk  class='top1'><img src=image_news/201112/2011122139450999.gif width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=57 target=_balnk  class='top1'><img src=image_news/201112/2011122164010000.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD><TD align=center><a href=Product_show.asp?id=56 target=_balnk  class='top1'><img src=image_news/201112/2011122249483999.jpg width=128 height=96 border=0></a></TD><TD><img src='/Public/Image/bg_1001.gif' width='6' height='1'></TD></TR><TR><TD height=10></TD></TR><TR><TD align=center valign=top height=20><a href=Product_show.asp?id=61 target=_balnk  class='top1'>黑豹牌JF-Ⅱ型HB聚合物水泥防水砂浆</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=60 target=_balnk  class='top1'>黑豹牌JF-I型HB聚合物水泥防水砂浆</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=59 target=_balnk  class='top1'>黑豹牌HB水泥基渗透结晶型防水材料</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=58 target=_balnk  class='top1'>黑豹牌HB型水不漏(速凝型)</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=57 target=_balnk  class='top1'>黑豹牌JS-II型HB聚合物水泥防水涂料</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=56 target=_balnk  class='top1'>黑豹牌JS-I型HB聚合物水泥防水涂料</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=61 target=_balnk  class='top1'>黑豹牌JF-Ⅱ型HB聚合物水泥防水砂浆</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=60 target=_balnk  class='top1'>黑豹牌JF-I型HB聚合物水泥防水砂浆</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=59 target=_balnk  class='top1'>黑豹牌HB水泥基渗透结晶型防水材料</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=58 target=_balnk  class='top1'>黑豹牌HB型水不漏(速凝型)</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=57 target=_balnk  class='top1'>黑豹牌JS-II型HB聚合物水泥防水涂料</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=56 target=_balnk  class='top1'>黑豹牌JS-I型HB聚合物水泥防水涂料</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=61 target=_balnk  class='top1'>黑豹牌JF-Ⅱ型HB聚合物水泥防水砂浆</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=60 target=_balnk  class='top1'>黑豹牌JF-I型HB聚合物水泥防水砂浆</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=59 target=_balnk  class='top1'>黑豹牌HB水泥基渗透结晶型防水材料</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=58 target=_balnk  class='top1'>黑豹牌HB型水不漏(速凝型)</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=57 target=_balnk  class='top1'>黑豹牌JS-II型HB聚合物水泥防水涂料</a></TD><TD></TD><TD align=center valign=top height=20><a href=Product_show.asp?id=56 target=_balnk  class='top1'>黑豹牌JS-I型HB聚合物水泥防水涂料</a></TD><TD></TD></TR></Table>
+                                            <Table cellpadding='0' cellspacing='0' border='0' width='100%'>
+                                                <TR>
+                                                    <?php  $_result=M("Product")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid in(22,40,41,42,43,44,45,46)")->order("id desc")->limit("15")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><TD align=center>
+                                                        <a href="<?php echo ($r["url"]); ?>" target=_balnk class='top1'><img src="<?php echo (thumb($r["thumb"])); ?>" width=128  height=96 border=0></a>
+                                                    </TD>
+                                                    <TD>
+                                                        <img src='/Public/Image/bg_1001.gif' width='6' height='1'>
+                                                    </TD><?php endforeach; endif;?>
+
+                                                </TR>
+                                                <TR>
+                                                    <TD height=10></TD>
+                                                </TR>
+                                                <TR>
+                                                    <?php  $_result=M("Product")->field("id,catid,url,title,title_style,keywords,description,thumb,createtime")->where(" 1  and lang=1 AND status=1  AND catid in(22,40,41,42,43,44,45,46)")->order("id desc")->limit("15")->select();; if ($_result): $i=0;foreach($_result as $key=>$r):++$i;$mod = ($i % 2 );?><TD align=center valign=top height=20><a href="<?php echo ($r["url"]); ?>"
+                                                                                             target=_balnk class='top1'><?php echo (str_cut($r["title"],30)); ?></a>
+                                                    </TD>
+                                                    <TD></TD><?php endforeach; endif;?>
+                                                </TR>
+                                            </Table>
                                         </TD>
                                         <td id=demo2 valign=top></td>
                                     </TR>
@@ -893,7 +834,7 @@
                        height="230" background="/Public/Image/in_5024.png">
                     <TR>
                         <TD colspan="4" height="35" align="right">
-                            <a href="Culture.asp" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[25][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5018.gif" border="0">
                             </a>
                             &nbsp;
@@ -903,12 +844,12 @@
                         <TD width="10">
                         </TD>
                         <TD width="105">
-                            <a href="Culture.asp" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[25][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5031.png" border="0">
                             </a>
                         </TD>
                         <TD width="105">
-                            <a href="Culture.asp" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[25][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5032.png" border="0">
                             </a>
                         </TD>
@@ -919,12 +860,12 @@
                         <TD width="10">
                         </TD>
                         <TD width="105">
-                            <a href="Culture.asp" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[25][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5033.png" border="0">
                             </a>
                         </TD>
                         <TD width="105">
-                            <a href="Culture.asp" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[25][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5034.png" border="0">
                             </a>
                         </TD>
@@ -943,7 +884,7 @@
                        height="205" background="/Public/Image/in_5025.png">
                     <TR>
                         <TD height="35" align="right">
-                            <a href="News.asp?UidA=6&UidB=49" class="top1" target="_blank">
+                            <a href="<?php echo ($Categorys[33][url]); ?>" class="top1" target="_blank">
                                 <img src="/Public/Image/in_5018.gif" border="0">
                             </a>
                             &nbsp;
@@ -1205,7 +1146,7 @@
             <font style=" font-family:Arial, Helvetica, sans-serif">
                 &copy;
             </font>
-            2003 深圳市新黑豹建材有限公司 HBHEIBAO.COM 版权所有 All Right Reserved. &nbsp;
+            2003 深圳市新黑豹建材有限公司 HEIBAOHB.COM 版权所有 All Right Reserved. &nbsp;
         </TD>
     </TR>
     <TR>

@@ -26,10 +26,7 @@ class SearchAction extends BaseAction
 		$_REQUEST['keyword'] = $keyword = get_safe_replace($_REQUEST['keyword']);
 		$_REQUEST['module'] = $module =  get_safe_replace($_REQUEST['module']);
 		
-		$_REQUEST['nametype'] = $nametype =  get_safe_replace($_REQUEST['nametype']);
-		$_REQUEST['kuanshi'] = $kuanshi =  get_safe_replace($_REQUEST['kuanshi']);
-		$_REQUEST['price'] = $price =  get_safe_replace($_REQUEST['price']);
-		
+
 		
 		$module =  $module ? $module  : 'Article' ;
 		$this->assign($_REQUEST);
@@ -89,37 +86,11 @@ class SearchAction extends BaseAction
 				$where .= ' AND title like "%'.$keyword.'%" ';
 			}
 		}
-		if($nametype)
-		{
-			$where .= ' AND nametype= '.$nametype.' ';
-		}
-		if($kuanshi)
-		{
-			$where .= ' AND kuanshi= '.$kuanshi.' ';
-		}
-		switch($price)
-		{
-			case 1: $where .=' AND price>0 AND price <100';break;
-			case 2: $where .=' AND price>200 AND price <300';break;
-			case 3: $where .=' AND price>300 AND price <400';break;
-			case 4: $where .=' AND price>400 AND price <500';break;
-			case 5: $where .=' AND price>500 AND price <600';break;
-		}
+
 	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		$this->dao= M($module);
 		$count = $this->dao->where($where)->count();
 		$this->assign('count',$count);
-		
 		if($count){
 			import ( "@.ORG.Page" );
 			$listRows =  !empty($cat['pagesize']) ? $cat['pagesize'] : C('PAGE_LISTROWS');

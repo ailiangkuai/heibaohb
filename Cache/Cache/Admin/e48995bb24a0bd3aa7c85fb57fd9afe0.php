@@ -1,4 +1,21 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=<?php echo C('DEFAULT_CHARSET');?>" /><title><?php echo L('welcome');?></title><link rel="stylesheet" type="text/css" href="__ROOT__/Public/Css/style.css" /><script type="text/javascript" src="__ROOT__/Public/Js/jquery.min.js"></script><script type="text/javascript" src="__ROOT__/Public/Js/jquery.artDialog.js?skin=default"></script><script type="text/javascript" src="__ROOT__/Public/Js/iframeTools.js"></script><script type="text/javascript" src="__ROOT__/Public/Js/jquery.form.js"></script><script type="text/javascript" src="__ROOT__/Public/Js/jquery.validate.js"></script><script type="text/javascript" src="__ROOT__/Public/Js/MyDate/WdatePicker.js"></script><script type="text/javascript" src="__ROOT__/Public/Js/jquery.colorpicker.js"></script><script type="text/javascript" src="__ROOT__/Public/Js/my.js"></script><script type="text/javascript" src="__ROOT__/Public/Js/swfupload.js"></script><script language="JavaScript"><!--
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo C('DEFAULT_CHARSET');?>" />
+<title><?php echo L('welcome');?></title>
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Css/style.css" /> 
+<script type="text/javascript" src="__ROOT__/Public/Js/jquery.min.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/Js/jquery.artDialog.js?skin=default"></script> 
+<script type="text/javascript" src="__ROOT__/Public/Js/iframeTools.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/Js/jquery.form.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/Js/jquery.validate.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/Js/MyDate/WdatePicker.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/Js/jquery.colorpicker.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/Js/my.js"></script> 
+<script type="text/javascript" src="__ROOT__/Public/Js/swfupload.js"></script> 
+
+<script language="JavaScript">
+<!--
 var ROOT =	 '__ROOT__';
 var URL = '__URL__';
 var APP	 =	 '__APP__';
@@ -6,9 +23,27 @@ var PUBLIC = '__PUBLIC__';
 function confirm_delete(url){
 	art.dialog.confirm("<?php echo L('real_delete');?>", function(){location.href = url;});
 }
-//--></script></head><body width="100%"><div id="loader" ><?php echo L('load_page');?></div><div id="result" class="result none"></div><div class="mainbox"><?php if(empty($_GET['isajax'])): ?><div id="nav" class="mainnav_title"><div id="lang"><?php if(APP_LANG): parse_str($_SERVER['QUERY_STRING'],$urlarr); unset($urlarr[l]); $url='index.php?'.http_build_query($urlarr); if(is_array($Lang)): $i = 0; $__LIST__ = $Lang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$langvo): $mod = ($i % 2 );++$i;?><a href="<?php echo ($url); ?>&l=<?php echo ($langvo["mark"]); ?>" <?php if($langvo[mark]==$_SESSION['YP_lang']): ?>class="on"<?php endif; ?>><?php echo ($langvo["name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; endif; ?></div><ul><a href="<?php echo U($nav[bnav][model].'/'.$nav[bnav][action],$nav[bnav][data]);?>"><?php echo ($nav["bnav"]["name"]); ?></a>|
+//-->
+</script>
+</head>
+<body width="100%">
+<div id="loader" ><?php echo L('load_page');?></div>
+<div id="result" class="result none"></div>
+<div class="mainbox">
+
+<?php if(empty($_GET['isajax'])): ?><div id="nav" class="mainnav_title">
+
+	<div id="lang">
+	<?php if(APP_LANG): parse_str($_SERVER['QUERY_STRING'],$urlarr); unset($urlarr[l]); $url='index.php?'.http_build_query($urlarr); ?>
+		<?php if(is_array($Lang)): $i = 0; $__LIST__ = $Lang;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$langvo): $mod = ($i % 2 );++$i;?><a href="<?php echo ($url); ?>&l=<?php echo ($langvo["mark"]); ?>" <?php if($langvo[mark]==$_SESSION['YP_lang']): ?>class="on"<?php endif; ?>><?php echo ($langvo["name"]); ?></a><?php endforeach; endif; else: echo "" ;endif; endif; ?>
+	</div>
+	<ul><a href="<?php echo U($nav[bnav][model].'/'.$nav[bnav][action],$nav[bnav][data]);?>"><?php echo ($nav["bnav"]["name"]); ?></a>|
 	<?php if(is_array($nav["nav"])): $i = 0; $__LIST__ = $nav["nav"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vonav): $mod = ($i % 2 );++$i; if($vonav[data][isajax]): ?><a href="javascript:void(0);" onclick="openwin('<?php echo ($vonav[action]); ?>','<?php echo U($vonav[model].'/'.$vonav[action],$vonav[data]);?>','<?php echo ($vonav["name"]); ?>',600,440)"><?php echo ($vonav["name"]); ?></a>|
-	<?php else: ?><a href="<?php echo U($vonav[model].'/'.$vonav[action],$vonav[data]);?>"><?php echo ($vonav["name"]); ?></a>|<?php endif; endforeach; endif; else: echo "" ;endif; ?></ul></div><script>	//|str_replace=__ROOT__.'/index.php','',###
+	<?php else: ?>
+	<a href="<?php echo U($vonav[model].'/'.$vonav[action],$vonav[data]);?>"><?php echo ($vonav["name"]); ?></a>|<?php endif; endforeach; endif; else: echo "" ;endif; ?></ul>
+	</div>
+	<script>
+	//|str_replace=__ROOT__.'/index.php','',###
 	var onurl ='<?php echo ($_SERVER["REQUEST_URI"]); ?>';
 	jQuery(document).ready(function(){
 		$('#nav ul a ').each(function(i){
@@ -24,9 +59,15 @@ function confirm_delete(url){
 		$('#nav ul a ').eq(0).addClass('on');
 		}
 	});
-	</script><?php endif; ?><script>if(self==top){
+	</script><?php endif; ?>
+
+<script>if(self==top){
 	window.top.location.href = '<?php echo U("Login/index");?>';
-}</script><style>.mainnav_title{ display:none;}
+}</script>
+
+<style>
+
+.mainnav_title{ display:none;}
 h1 { height:30px;line-height:30px;font-size:14px;padding-left:15px;background:#EEE;border-bottom:1px solid #ddd;border-right:1px solid #ddd;overflow:hidden;zoom:1;margin-bottom:10px;}
 h1 b {color:#3865B8;}
 h1 span {color:#ccc;font-size:10px;margin-left:10px;}
@@ -59,4 +100,46 @@ h1 span {color:#ccc;font-size:10px;margin-left:10px;}
 #Yourphp_sn {color:#FB0000;font-weight:normal;}
 #Yourphp_license {font-weight:normal;color:blue;}
 #Yourphp_license a {color:#FB0000;}
-</style><div id="Profile" class="list"><h1><b><?php echo L(Profile_info);?></b><span>Profile&nbsp; Info</span></h1><ul><?php if(is_array($userinfo)): $i = 0; $__LIST__ = $userinfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><span><?php echo L($key);?>:</span><?php echo ($v); ?></li><?php endforeach; endif; else: echo "" ;endif; ?></ul></div><div id="sitestats" ><h1><b><?php echo L(Site_Stats);?></b><span>Site&nbsp; Stats</span></h1><div><ul><?php if(is_array($moduledata)): $i = 0; $__LIST__ = $moduledata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><b><?php echo ($v[title]); ?></b><br><span><?php echo ($v[counts]); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li><li><b></b><span></span></li></ul></div></div><div id="system"  class="list"><h1><b><?php echo L(system_info);?></b><span>System&nbsp; Info</span></h1><ul><?php if(is_array($server_info)): $i = 0; $__LIST__ = $server_info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><span><?php echo L($key);?>:</span><?php echo ($v); ?></li><?php endforeach; endif; else: echo "" ;endif; ?></ul></div></body></html>
+</style>
+
+	<div id="Profile" class="list">
+		<h1><b><?php echo L(Profile_info);?></b><span>Profile&nbsp; Info</span></h1>
+		<ul>
+		<?php if(is_array($userinfo)): $i = 0; $__LIST__ = $userinfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><span><?php echo L($key);?>:</span><?php echo ($v); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
+		</ul>
+	</div>
+
+	<div id="sitestats" >
+		<h1><b><?php echo L(Site_Stats);?></b><span>Site&nbsp; Stats</span></h1>
+		<div>
+		<ul>
+		<?php if(is_array($moduledata)): $i = 0; $__LIST__ = $moduledata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><b><?php echo ($v[title]); ?></b><br><span><?php echo ($v[counts]); ?></span></li><?php endforeach; endif; else: echo "" ;endif; ?>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		<li><b></b><span></span></li>
+		</ul></div>
+	</div>
+
+
+	<div id="system"  class="list">
+		<h1><b><?php echo L(system_info);?></b><span>System&nbsp; Info</span></h1>
+		<ul>
+		<?php if(is_array($server_info)): $i = 0; $__LIST__ = $server_info;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><span><?php echo L($key);?>:</span><?php echo ($v); ?></li><?php endforeach; endif; else: echo "" ;endif; ?>
+		</ul>
+	</div>
+
+
+ 	 
+
+
+
+</body>
+</html>

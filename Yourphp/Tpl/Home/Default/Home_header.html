@@ -5,9 +5,6 @@
 	<meta name="robots" content="index, follow" />
 	<meta name="keywords" content="{$seo_keywords}" />
 	<meta name="description" content="{$seo_description}" />
-	<meta name="Copyright" content="Copyright (c) 2008 yourphp.cn" />
-	<meta name="author" content="{$site_name}--Powered by yourphp">
-	<meta name="generator" content="Yourphp 2.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 	<title>{$seo_title}-{$site_name}</title>
 	<link href="__ROOT__/index.php?m=Format&a=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
@@ -100,7 +97,10 @@
 		</TR>
 	</table>
 	<table align="center" cellpadding="0" cellspacing="0" border="0" width="1000" height="80" background="/Public/Image/in_1002.png">
-		<form action="Product.asp" method="post" target="_blank">
+		<form action="__ROOT__?" method="get" target="_blank">
+			<input type="hidden" id=""  name="m" value="Search"/>{if APP_LANG}<input type="hidden" name="l" value="{$l}" />{/if}
+			<input type="hidden" name="module" value="Product">
+			<input type="hidden" name="catid" value="22">
 			<TR>
 				<TD width="450">
 				</TD>
@@ -125,7 +125,7 @@
 					<center>
 						<img src="/Public/Image/bg_1001.gif" width="1" height="18">
 					</center>
-					<input name="title" type="text" maxlength="50" style="color:#666666; width:108px; border:0px #333333 solid;">
+					<input name="keyword" type="text" maxlength="50" style="color:#666666; width:108px; border:0px #333333 solid;">
 					<img src="/Public/Image/bg_1001.gif" width="17" height="1">
 					<input type="image" src="/Public/Image/in_1036.gif" align="absmiddle">
 				</TD>
@@ -133,12 +133,12 @@
 					<center>
 						<img src="/Public/Image/bg_1001.gif" width="1" height="21">
 					</center>
-					<a href="#" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.hbheibao.com');"
+					<a href="#" onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('{$site_url}');"
 					   class="top3">
 						设为首页
 					</a>
 					|
-					<a href="javascript:window.external.AddFavorite('http://www.hbheibao.com','深圳市新黑豹建材有限公司')"
+					<a href="javascript:window.external.AddFavorite('{$site_url}','深圳市新黑豹建材有限公司')"
 					   class="top3">
 						加入收藏
 					</a>
