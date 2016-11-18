@@ -22,10 +22,8 @@ class CodeAction extends BaseAction
     {
 		//搜索
 		$p= max(intval($_REQUEST[C('VAR_PAGE')]),1);
-        $code = preg_match('/\d{20}/', $_GET['code']) ? $_GET['code'] : null;
-        $_REQUEST['code'] = $code;
-		$this->assign($_REQUEST);
-		$this->assign('bcid',0);
+        $code = preg_match('/\d{20}/', $_POST['code']) ? $_POST['code'] : null;
+        $_POST['code'] = $code;
 		$where = " status=1 ";
 
 		
@@ -50,6 +48,7 @@ class CodeAction extends BaseAction
         !is_null($model) && $this->dao->where(array('id'=>$model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
         $model && ++$model['hits'];
         $this->assign('model',$model);
+        $this->assign($_POST);
 		$this->display();
 
     } 
