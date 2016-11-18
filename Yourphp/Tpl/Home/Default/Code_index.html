@@ -435,15 +435,23 @@
             <button type="submit" id="fwcx" style="width:84px;">防伪查询</button>
 
             <br/>
-            <?php if($code): ?>
-            <div id="fwresult">您所查询的防伪码是：{$code}<br/>
-                <?php if($model): ?>
-                    <?php if($model['hits']>5): ?>
-                    查询结果：您所查询的数码已被多次查询，谨防假冒。如需咨询请拨打电话：010-84850315。<br/>
-                    <?php else: ?>
-                    查询结果：产品是真货,这是第{$model.hits}次查询<?php if($model['hits']!=1): ?>上次查询的时间是<?php echo date('Y-m-d H:i:s',$model['updatetime']); endif; ?>
-                    <?php endif; ?>
-                <?php else: ?>
+            <?php if($code)://有查询码 ?>
+            <div id="fwresult">您所查询的防伪码是：<br/>{$code}<br/>
+                <?php if($model)://有查询结果 ?>
+                        <?php
+                            switch($model['hits']){
+                                case 1:
+                                    echo '查询结果：您所查询的是新黑豹建材有限公司生产的“黑豹”牌防水材料，是正宗产品的编码。请您留意：我们产品的注册商标是“黑豹”，公司的全称是：深圳市新黑豹建材有限公司，这样的留言才是正品。<br/>';
+                                    break;
+                                case 2:
+                                case 3:
+                                case 4:
+                                    echo '查询结果：您所查询的数码已被查询过'.$model['hits'].'次。首次查询时间为：'.date('Y/m/d H:i:s',$model['updatetime']).'，查询方式：微信，如需咨询请拨打电话：010-84850315。<br/>';
+                                    break;
+                                default:echo '查询结果：您所查询的数码已被多次查询，谨防假冒。如需咨询请拨打电话：010-84850315。<br/>';
+                            }
+                        ?>
+                <?php else://没有查询结果 ?>
                  查询结果：防伪码不存在，你可能购买到了假货，如需咨询请拨打电话：010-84850315。<br/>
                 <?php endif; ?>
             </div>
