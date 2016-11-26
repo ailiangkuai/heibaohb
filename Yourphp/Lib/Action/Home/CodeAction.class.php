@@ -48,6 +48,9 @@ class CodeAction extends BaseAction
         header('Cache-Control:no-cache,must-revalidate');
         header('Pragma:no-cache');
         header("Expires:0");
+        if(!isset($_GET['rand'])){
+            $this->redirect('?rand='.time());
+        }
         //搜索
 		$p= max(intval($_REQUEST[C('VAR_PAGE')]),1);
         $code = preg_match('/\d{20}/', $_POST['code']) ? $_POST['code'] : null;
