@@ -529,7 +529,7 @@ btn.addEventListener("touchstart", function (e) {
     e.preventDefault();
 });
 btn.addEventListener("click", function (e) {
-    if (document.getElementById('txtFwcode').value.length == 20) {
+    if (document.getElementById('txtFwcode').value.length == 20 && document.querySelector("#fwcx").disabled == false) {
         document.getElementById('fwcx').innerHTML = "正在查询";
         document.getElementById('fwcx').setAttribute("disabled", "disabled");
         document.getElementById('form1').submit();
