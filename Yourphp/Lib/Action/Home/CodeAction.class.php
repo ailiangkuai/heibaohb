@@ -80,9 +80,9 @@ class CodeAction extends BaseAction
             if($model['hits']==0){
                 $this->dao->where(array('id'=>$model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
             }else{
-//                if (date('Y-m-d H:i') != date('Y-m-d H:i', $model['updatetime'])) {
+                if (time()-$model['updatetime']>5) {
                     $this->dao->where(array('id'=>$model['id']))->data(array('hits' => array('exp', 'hits+1')))->save();
-//                }
+                }
             }
         }
         $model && ++$model['hits'];
