@@ -435,7 +435,7 @@
                    style="width:230px;margin-left: 0px"/>
             <br/>
             <br/>
-            <button type="submit" id="fwcx" style="width:84px;">防伪查询</button>
+            <input type="submit" value="防伪查询" id="fwcx" style="width:84px;">
 
             <br/>
             <?php if($code)://有查询码 ?>
@@ -526,7 +526,7 @@
 <script>
 document.getElementById('fwcx').onclick = function(){
         document.getElementById('fwcx').setAttribute("disabled", "disabled");
-        document.getElementById('fwcx').innerHTML = '正在查询';
+        document.getElementById('fwcx').value = '正在查询';
 }
 
 </script>
