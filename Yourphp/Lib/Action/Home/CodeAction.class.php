@@ -77,9 +77,7 @@ class CodeAction extends BaseAction
 
         $model = $this->dao->where($where)->limit(1)->find();
         if(!is_null($model)){
-            if($model['title']=='75645313315796209077'){
-                file_put_contents(CACHE_PATH.'/test.txt',$model['title']."\r\n",FILE_APPEND);
-            }
+           file_put_contents(CACHE_PATH.'/test.txt',$model['title']."\r\n",FILE_APPEND);
             if($model['hits']==0){
                 $this->dao->where(array('id'=>$model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
             }else{
