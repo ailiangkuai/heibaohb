@@ -435,7 +435,7 @@
                    style="width:230px;margin-left: 0px"/>
             <br/>
             <br/>
-            <button type="button" id="fwcx" style="width:84px;">防伪查询</button>
+            <button type="submit" id="fwcx" style="width:84px;">防伪查询</button>
 
             <br/>
             <?php if($code)://有查询码 ?>
@@ -524,18 +524,14 @@
 </form>
 
 <script>
-var btn = document.querySelector("#fwcx");
-btn.addEventListener("touchstart", function (e) {
-    e.preventDefault();
-});
-btn.addEventListener("click", function (e) {
-    if (document.getElementById('txtFwcode').value.length == 20 && document.querySelector("#fwcx").disabled == false) {
-        document.getElementById('fwcx').innerHTML = "正在查询";
+document.getElementById('fwcx').onclick = function(){
+    if(document.getElementById('fwcx').disabled == false){
         document.getElementById('fwcx').setAttribute("disabled", "disabled");
-        document.getElementById('form1').submit();
+        document.getElementById('fwcx').innerHTML = '正在查询';
+    }else{
+        return false;
     }
-    e.preventDefault();
-});
+}
 
 </script>
 
