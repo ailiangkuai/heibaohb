@@ -45,7 +45,10 @@ class CodeAction extends BaseAction
 
     public function index()
     {
-		//搜索
+        header('Cache-Control:no-cache,must-revalidate');
+        header('Pragma:no-cache');
+        header("Expires:0");
+        //搜索
 		$p= max(intval($_REQUEST[C('VAR_PAGE')]),1);
         $code = preg_match('/\d{20}/', $_POST['code']) ? $_POST['code'] : null;
         $_POST['code'] = $code;
