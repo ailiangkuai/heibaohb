@@ -524,16 +524,21 @@
 </form>
 
 <script>
-    document.getElementById('fwcx').onclick = function () {
-        if(document.getElementById('txtFwcode').value.length==20){
-            document.getElementById('fwcx').innerHTML="正在查询";
-            document.getElementById('fwcx').setAttribute("disabled", "disabled");
-            document.getElementById('form1').submit();
-        }else{
-            return false;
-        }
+var btn = document.querySelector("#fwcx");
+btn.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+});
+btn.addEventListener("click", function (e) {
+    if (document.getElementById('txtFwcode').value.length == 20) {
+        document.getElementById('fwcx').innerHTML = "正在查询";
+        document.getElementById('fwcx').setAttribute("disabled", "disabled");
+        document.getElementById('form1').submit();
+    } else {
         return false;
     }
+    return false;
+});
+
 </script>
 
 </BODY>
