@@ -533,10 +533,8 @@ btn.addEventListener("click", function (e) {
         document.getElementById('fwcx').innerHTML = "正在查询";
         document.getElementById('fwcx').setAttribute("disabled", "disabled");
         document.getElementById('form1').submit();
-    } else {
-        return false;
     }
-    return false;
+    e.preventDefault();
 });
 
 </script>
