@@ -524,8 +524,13 @@
 </form>
 
 <script>
+    var isRequest = false;
 document.getElementById('fwcx').onclick = function(){
-        document.getElementById('fwcx').value = '正在查询';
+    if(document.getElementById('txtFwcode').value.length!=20||isRequest==true){
+        return false;
+    }
+    document.getElementById('fwcx').value = '正在查询';
+    isRequest = true;
 }
 
 </script>
