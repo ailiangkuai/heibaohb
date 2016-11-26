@@ -408,7 +408,7 @@
 <BODY>
 
 
-<form name="form1" method="post" action="" id="form1">
+<form name="form1" method="post" action="" id="form1" onsubmit="beforeSubmit();">
     <div>
     </div>
 
@@ -519,6 +519,19 @@
         </p>
     </div>
 </form>
+
+<script>
+    document.getElementById('fwcx').onclick = function () {
+        if(document.getElementById('txtFwcode').value.length==20){
+            document.getElementById('fwcx').innerHTML="正在查询";
+            document.getElementById('fwcx').setAttribute("disabled", "disabled");
+            document.getElementById('form1').submit();
+        }else{
+            return false;
+        }
+    }
+</script>
+
 </BODY>
 </html>
 
