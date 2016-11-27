@@ -63,10 +63,13 @@ class CodeAction extends BaseAction
                     if ($model['hits'] == 0) {
                         $this->dao->where(array('id' => $model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
                     } else {
-                        $this->dao->where(array('id' => $model['id']))->data(array('hits' => array('exp', 'hits+1')))->save();
+                        if (!isset($_SESSION[$code]) || time() - $_SESSION[$code] > 60) {
+                            $this->dao->where(array('id' => $model['id']))->data(array('hits' => array('exp', 'hits+1')))->save();
+                        }
                     }
                     ++$model['hits'];
                     $this->assign('model',$model);
+                    $_SESSION[$code] = time();
                 }
             }
             $this->assign('code',$code);
