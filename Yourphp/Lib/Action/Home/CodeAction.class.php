@@ -53,22 +53,23 @@ class CodeAction extends BaseAction
         }
         $isPost = $this->isPost();
         if ($isPost) {
-            if($code = preg_match('/\d{20}/', $_POST['code']) ? $_POST['code'] : ''){
+            if ($code = preg_match('/\d{20}/', $_POST['code']) ? $_POST['code'] : '') {
                 $where = " status=1 ";
-                $where .= ' AND title = "'.$code.'" ' ;
-                $this->dao= M('Code');
+                $where .= ' AND title = "' . $code . '" ';
+                $this->dao = M('Code');
                 $model = $this->dao->where($where)->limit(1)->find();
-                if(!is_null($model)){
+                if (!is_null($model)) {
                     file_put_contents(CACHE_PATH . '/test.txt', $model['title'] . '-' . date('Y-m-d H:i:s') . "\r\n", FILE_APPEND);
                     if ($model['hits'] == 0) {
                         $this->dao->where(array('id' => $model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
+                        ++$model['hits'];
                     } else {
                         if (!isset($_SESSION[$code]) || time() - $_SESSION[$code] > 60) {
-                            //$this->dao->where(array('id' => $model['id']))->data(array('hits' => array('exp', 'hits+1')))->save();
+                            $this->dao->where(array('id' => $model['id']))->data(array('hits' => array('exp', 'hits+1')))->save();
+                            ++$model['hits'];
                         }
                     }
-                    ++$model['hits'];
-                    $this->assign('model',$model);
+                    $this->assign('model', $model);
                     $_SESSION[$code] = time();
                 }
             }
