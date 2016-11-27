@@ -51,44 +51,27 @@ class CodeAction extends BaseAction
         if(!isset($_GET['rand'])){
             $this->redirect('?rand='.time());
         }
-        //搜索
-		$p= max(intval($_REQUEST[C('VAR_PAGE')]),1);
-        $code = preg_match('/\d{20}/', $_POST['code']) ? $_POST['code'] : null;
-        $_POST['code'] = $code;
-		$where = " status=1 ";
-
-		
-		
-		if(APP_LANG){
-			$lang = LANG_NAME;
-			$langid= LANG_ID;
-			$where .=" and lang= $langid";
-			$this->assign('lang',$lang);
-			$this->assign('langid',$langid);
-		}
-
-
-		$this->assign ('seo_title',$code);
-        if($code){
-            $where .= ' AND title = "'.$code.'" ' ;
-            $this->assign('code',$code);
-        }
-		$this->dao= M('Code');
-        $model = $this->dao->where($where)->limit(1)->find();
-        if(!is_null($model)){
-           file_put_contents(CACHE_PATH.'/test.txt',$model['title'].'-'.date('Y-m-d H:i:s')."\r\n",FILE_APPEND);
-            if($model['hits']==0){
-                $this->dao->where(array('id'=>$model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
-            }else{
-                if (!isset($_SESSION['requestTime']) || time() - $_SESSION['requestTime'] > 10) {
-                    $this->dao->where(array('id'=>$model['id']))->data(array('hits' => array('exp', 'hits+1')))->save();
+        $isPost = $this->isPost();
+        if ($isPost) {
+            if($code = preg_match('/\d{20}/', $_POST['code']) ? $_POST['code'] : ''){
+                $where = " status=1 ";
+                $where .= ' AND title = "'.$code.'" ' ;
+                $this->dao= M('Code');
+                $model = $this->dao->where($where)->limit(1)->find();
+                if(!is_null($model)){
+                    file_put_contents(CACHE_PATH . '/test.txt', $model['title'] . '-' . date('Y-m-d H:i:s') . "\r\n", FILE_APPEND);
+                    if ($model['hits'] == 0) {
+                        $this->dao->where(array('id' => $model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
+                    } else {
+                        $this->dao->where(array('id' => $model['id']))->data(array('hits' => array('exp', 'hits+1')))->save();
+                    }
+                    ++$model['hits'];
+                    $this->assign('model',$model);
                 }
             }
+            $this->assign('code',$code);
         }
-        $_SESSION['requestTime'] = time();
-        $model && ++$model['hits'];
-        $this->assign('model',$model);
-        $this->assign($_POST);
+        $this->assign('isPost',$isPost);
 		$this->display();
 
     } 
