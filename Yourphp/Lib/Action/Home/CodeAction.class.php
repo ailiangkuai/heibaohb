@@ -59,7 +59,7 @@ class CodeAction extends BaseAction
                 $this->dao = M('Code');
                 $model = $this->dao->where($where)->limit(1)->find();
                 if (!is_null($model)) {
-                    file_put_contents(CACHE_PATH . '/test.txt', $model['title'] . '-' . date('Y-m-d H:i:s') . "\r\n", FILE_APPEND);
+                    file_put_contents(CACHE_PATH . '/test.txt', $model['title'] . '-' . date('Y-m-d H:i:s').' - '.get_client_ip() . "\r\n", FILE_APPEND);
                     if ($model['hits'] == 0) {
                         $this->dao->where(array('id' => $model['id']))->data(array('updatetime' => time(), 'hits' => array('exp', 'hits+1')))->save();
                         ++$model['hits'];
