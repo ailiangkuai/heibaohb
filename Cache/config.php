@@ -8,8 +8,8 @@
  return array(
 	'DB_TYPE'=>'mysql',
 	'DB_HOST'=>'localhost',
-	'DB_NAME'=>'heibaohb',
-	'DB_USER'=>'heibaohb',
+	'DB_NAME'=>'heibaohb2',
+	'DB_USER'=>'heibaohb2',
 	'DB_PWD'=>'Td@z,b?p=b_f',
 	'DB_PORT'=>'3306',
 	'DB_PREFIX'=>'cms_',

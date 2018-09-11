@@ -21,3 +21,4 @@ define('THINK_PATH','./Core/');
 
 require(THINK_PATH.'Core.php');
 ?>
+
